@@ -4,7 +4,7 @@ using System.Net.Mail;
 using System.Threading.Tasks;
 
 namespace Chat
-{
+{ 
     public partial class ForgotPasswordForm : MetroFramework.Forms.MetroForm
     {
         public ForgotPasswordForm()

@@ -9,7 +9,7 @@ namespace Chat
         {
             InitializeComponent();
         }
-
+         
         public CodeFromEmailForm(String pass)
         {
             InitializeComponent();
