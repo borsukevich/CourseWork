@@ -23,25 +23,28 @@ namespace Chat
         {
             String pass  = this.GeneratePassword();
             String login = this.EmailBox.Text;
+
             SendToEmailAsync(pass,login).GetAwaiter();
-            
             CodeFromEmailForm pfm = new CodeFromEmailForm(pass);
-            this.Close();
             pfm.Show();
         }
 
+        /*
+            Login: SendMailToUserTest@gmail.com
+            Pass:  sendingMessageToUSER123
+        */
         private async Task SendToEmailAsync(String password,String login)
         {
-            MailAddress from = new MailAddress("fromMail", "Team Dev");
-            MailAddress to = new MailAddress(login);
+            MailAddress from = new MailAddress("SendMailToUserTest@gmail.com", "Team Devevelopers");
+            MailAddress to = new MailAddress(login ?? String.Empty);
             MailMessage message = new MailMessage(from, to)
             {
                 Subject = "Forgot password ?",
-                Body = "Here is your code that you should use to create new password: " + Environment.NewLine + "Password: " + password
+                Body = "Here is your code that you should use to create new password: " + Environment.NewLine + "Code: " + password
             };
             SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587)
             {
-                Credentials = new NetworkCredential("fromMail", "fromPass"),
+                Credentials = new NetworkCredential("SendMailToUserTest@gmail.com", "sendingMessageToUSER123"),
                 EnableSsl = true
             };
             await smtp.SendMailAsync(message);

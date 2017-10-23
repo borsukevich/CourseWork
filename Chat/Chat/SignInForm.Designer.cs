@@ -66,7 +66,7 @@
             // 
             this.LoginBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LoginBox.Location = new System.Drawing.Point(177, 127);
-            this.LoginBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.LoginBox.Margin = new System.Windows.Forms.Padding(4);
             this.LoginBox.Name = "LoginBox";
             this.LoginBox.Size = new System.Drawing.Size(181, 26);
             this.LoginBox.TabIndex = 2;
@@ -75,7 +75,7 @@
             // 
             this.PasswordBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.PasswordBox.Location = new System.Drawing.Point(177, 193);
-            this.PasswordBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PasswordBox.Margin = new System.Windows.Forms.Padding(4);
             this.PasswordBox.Name = "PasswordBox";
             this.PasswordBox.PasswordChar = '●';
             this.PasswordBox.Size = new System.Drawing.Size(181, 26);
@@ -86,7 +86,7 @@
             this.SignInButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SignInButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.SignInButton.Location = new System.Drawing.Point(111, 299);
-            this.SignInButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SignInButton.Margin = new System.Windows.Forms.Padding(4);
             this.SignInButton.Name = "SignInButton";
             this.SignInButton.Size = new System.Drawing.Size(180, 42);
             this.SignInButton.TabIndex = 6;
@@ -137,7 +137,7 @@
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "SignInForm";
