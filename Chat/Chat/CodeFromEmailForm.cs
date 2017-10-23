@@ -10,6 +10,12 @@ namespace Chat
             InitializeComponent();
         }
 
+        public CodeFromEmailForm(String pass)
+        {
+            InitializeComponent();
+        }
+
+
         private void SubmitCodeButton_Click(object sender, EventArgs e)
         {
             SignInForm sif = new SignInForm();

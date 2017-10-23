@@ -63,9 +63,10 @@
             this.BackButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BackButton.BackgroundImage")));
             this.BackButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BackButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BackButton.Location = new System.Drawing.Point(18, 23);
+            this.BackButton.Location = new System.Drawing.Point(24, 28);
+            this.BackButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BackButton.Name = "BackButton";
-            this.BackButton.Size = new System.Drawing.Size(30, 30);
+            this.BackButton.Size = new System.Drawing.Size(40, 37);
             this.BackButton.TabIndex = 21;
             this.BackButton.TabStop = false;
             this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
@@ -75,10 +76,9 @@
             this.NameLabel.AutoSize = true;
             this.NameLabel.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.NameLabel.ForeColor = System.Drawing.Color.White;
-            this.NameLabel.Location = new System.Drawing.Point(13, 71);
-            this.NameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.NameLabel.Location = new System.Drawing.Point(17, 87);
             this.NameLabel.Name = "NameLabel";
-            this.NameLabel.Size = new System.Drawing.Size(67, 25);
+            this.NameLabel.Size = new System.Drawing.Size(69, 25);
             this.NameLabel.Style = MetroFramework.MetroColorStyle.Black;
             this.NameLabel.TabIndex = 22;
             this.NameLabel.Text = "Name: ";
@@ -90,18 +90,18 @@
             // 
             // 
             this.NameTextBox.CustomButton.Image = null;
-            this.NameTextBox.CustomButton.Location = new System.Drawing.Point(245, 1);
-            this.NameTextBox.CustomButton.Margin = new System.Windows.Forms.Padding(2);
+            this.NameTextBox.CustomButton.Location = new System.Drawing.Point(439, 1);
+            this.NameTextBox.CustomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.NameTextBox.CustomButton.Name = "";
-            this.NameTextBox.CustomButton.Size = new System.Drawing.Size(17, 17);
+            this.NameTextBox.CustomButton.Size = new System.Drawing.Size(28, 26);
             this.NameTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.NameTextBox.CustomButton.TabIndex = 1;
             this.NameTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.NameTextBox.CustomButton.UseSelectable = true;
             this.NameTextBox.CustomButton.Visible = false;
             this.NameTextBox.Lines = new string[0];
-            this.NameTextBox.Location = new System.Drawing.Point(18, 102);
-            this.NameTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.NameTextBox.Location = new System.Drawing.Point(24, 126);
+            this.NameTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.NameTextBox.MaxLength = 20;
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.PasswordChar = '\0';
@@ -110,7 +110,7 @@
             this.NameTextBox.SelectionLength = 0;
             this.NameTextBox.SelectionStart = 0;
             this.NameTextBox.ShortcutsEnabled = true;
-            this.NameTextBox.Size = new System.Drawing.Size(263, 19);
+            this.NameTextBox.Size = new System.Drawing.Size(351, 23);
             this.NameTextBox.TabIndex = 23;
             this.NameTextBox.UseSelectable = true;
             this.NameTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -121,10 +121,10 @@
             // 
             this.NamePictureBox.ErrorImage = ((System.Drawing.Image)(resources.GetObject("NamePictureBox.ErrorImage")));
             this.NamePictureBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("NamePictureBox.InitialImage")));
-            this.NamePictureBox.Location = new System.Drawing.Point(261, 76);
-            this.NamePictureBox.Margin = new System.Windows.Forms.Padding(2);
+            this.NamePictureBox.Location = new System.Drawing.Point(348, 94);
+            this.NamePictureBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.NamePictureBox.Name = "NamePictureBox";
-            this.NamePictureBox.Size = new System.Drawing.Size(20, 20);
+            this.NamePictureBox.Size = new System.Drawing.Size(27, 25);
             this.NamePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.NamePictureBox.TabIndex = 24;
             this.NamePictureBox.TabStop = false;
@@ -133,10 +133,9 @@
             // 
             this.SurnameLabel.AutoSize = true;
             this.SurnameLabel.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.SurnameLabel.Location = new System.Drawing.Point(13, 133);
-            this.SurnameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.SurnameLabel.Location = new System.Drawing.Point(17, 164);
             this.SurnameLabel.Name = "SurnameLabel";
-            this.SurnameLabel.Size = new System.Drawing.Size(89, 25);
+            this.SurnameLabel.Size = new System.Drawing.Size(91, 25);
             this.SurnameLabel.Style = MetroFramework.MetroColorStyle.Black;
             this.SurnameLabel.TabIndex = 25;
             this.SurnameLabel.Text = "Surname: ";
@@ -148,18 +147,18 @@
             // 
             // 
             this.SurnameTextBox.CustomButton.Image = null;
-            this.SurnameTextBox.CustomButton.Location = new System.Drawing.Point(245, 1);
-            this.SurnameTextBox.CustomButton.Margin = new System.Windows.Forms.Padding(2);
+            this.SurnameTextBox.CustomButton.Location = new System.Drawing.Point(439, 1);
+            this.SurnameTextBox.CustomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SurnameTextBox.CustomButton.Name = "";
-            this.SurnameTextBox.CustomButton.Size = new System.Drawing.Size(17, 17);
+            this.SurnameTextBox.CustomButton.Size = new System.Drawing.Size(28, 26);
             this.SurnameTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.SurnameTextBox.CustomButton.TabIndex = 1;
             this.SurnameTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.SurnameTextBox.CustomButton.UseSelectable = true;
             this.SurnameTextBox.CustomButton.Visible = false;
             this.SurnameTextBox.Lines = new string[0];
-            this.SurnameTextBox.Location = new System.Drawing.Point(18, 162);
-            this.SurnameTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.SurnameTextBox.Location = new System.Drawing.Point(24, 199);
+            this.SurnameTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SurnameTextBox.MaxLength = 30;
             this.SurnameTextBox.Name = "SurnameTextBox";
             this.SurnameTextBox.PasswordChar = '\0';
@@ -168,7 +167,7 @@
             this.SurnameTextBox.SelectionLength = 0;
             this.SurnameTextBox.SelectionStart = 0;
             this.SurnameTextBox.ShortcutsEnabled = true;
-            this.SurnameTextBox.Size = new System.Drawing.Size(263, 19);
+            this.SurnameTextBox.Size = new System.Drawing.Size(351, 23);
             this.SurnameTextBox.TabIndex = 26;
             this.SurnameTextBox.UseSelectable = true;
             this.SurnameTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -179,10 +178,9 @@
             // 
             this.BirthdayLabel.AutoSize = true;
             this.BirthdayLabel.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.BirthdayLabel.Location = new System.Drawing.Point(13, 191);
-            this.BirthdayLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.BirthdayLabel.Location = new System.Drawing.Point(17, 235);
             this.BirthdayLabel.Name = "BirthdayLabel";
-            this.BirthdayLabel.Size = new System.Drawing.Size(84, 25);
+            this.BirthdayLabel.Size = new System.Drawing.Size(87, 25);
             this.BirthdayLabel.Style = MetroFramework.MetroColorStyle.Black;
             this.BirthdayLabel.TabIndex = 27;
             this.BirthdayLabel.Text = "Birthday: ";
@@ -195,7 +193,7 @@
             this.userDayBirth.ForeColor = System.Drawing.SystemColors.WindowText;
             this.userDayBirth.FormattingEnabled = true;
             this.userDayBirth.IntegralHeight = false;
-            this.userDayBirth.ItemHeight = 23;
+            this.userDayBirth.ItemHeight = 24;
             this.userDayBirth.Items.AddRange(new object[] {
             "1",
             "2",
@@ -228,10 +226,10 @@
             "29",
             "30",
             "31"});
-            this.userDayBirth.Location = new System.Drawing.Point(18, 219);
-            this.userDayBirth.Margin = new System.Windows.Forms.Padding(2);
+            this.userDayBirth.Location = new System.Drawing.Point(24, 270);
+            this.userDayBirth.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.userDayBirth.Name = "userDayBirth";
-            this.userDayBirth.Size = new System.Drawing.Size(44, 29);
+            this.userDayBirth.Size = new System.Drawing.Size(57, 30);
             this.userDayBirth.TabIndex = 28;
             this.userDayBirth.UseSelectable = true;
             // 
@@ -241,7 +239,7 @@
             this.userMonthBirth.DropDownHeight = 100;
             this.userMonthBirth.FormattingEnabled = true;
             this.userMonthBirth.IntegralHeight = false;
-            this.userMonthBirth.ItemHeight = 23;
+            this.userMonthBirth.ItemHeight = 24;
             this.userMonthBirth.Items.AddRange(new object[] {
             "January",
             "February",
@@ -255,10 +253,10 @@
             "October",
             "November",
             "December"});
-            this.userMonthBirth.Location = new System.Drawing.Point(77, 219);
-            this.userMonthBirth.Margin = new System.Windows.Forms.Padding(2);
+            this.userMonthBirth.Location = new System.Drawing.Point(103, 270);
+            this.userMonthBirth.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.userMonthBirth.Name = "userMonthBirth";
-            this.userMonthBirth.Size = new System.Drawing.Size(105, 29);
+            this.userMonthBirth.Size = new System.Drawing.Size(139, 30);
             this.userMonthBirth.TabIndex = 29;
             this.userMonthBirth.UseSelectable = true;
             // 
@@ -268,7 +266,7 @@
             this.userYearBirth.DropDownHeight = 100;
             this.userYearBirth.FormattingEnabled = true;
             this.userYearBirth.IntegralHeight = false;
-            this.userYearBirth.ItemHeight = 23;
+            this.userYearBirth.ItemHeight = 24;
             this.userYearBirth.Items.AddRange(new object[] {
             "1975",
             "1976",
@@ -313,10 +311,10 @@
             "2015",
             "2016",
             "2017"});
-            this.userYearBirth.Location = new System.Drawing.Point(197, 219);
-            this.userYearBirth.Margin = new System.Windows.Forms.Padding(2);
+            this.userYearBirth.Location = new System.Drawing.Point(263, 270);
+            this.userYearBirth.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.userYearBirth.Name = "userYearBirth";
-            this.userYearBirth.Size = new System.Drawing.Size(84, 29);
+            this.userYearBirth.Size = new System.Drawing.Size(111, 30);
             this.userYearBirth.TabIndex = 30;
             this.userYearBirth.UseSelectable = true;
             // 
@@ -324,10 +322,9 @@
             // 
             this.LoginLabel.AutoSize = true;
             this.LoginLabel.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.LoginLabel.Location = new System.Drawing.Point(13, 255);
-            this.LoginLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LoginLabel.Location = new System.Drawing.Point(17, 314);
             this.LoginLabel.Name = "LoginLabel";
-            this.LoginLabel.Size = new System.Drawing.Size(63, 25);
+            this.LoginLabel.Size = new System.Drawing.Size(66, 25);
             this.LoginLabel.Style = MetroFramework.MetroColorStyle.Black;
             this.LoginLabel.TabIndex = 31;
             this.LoginLabel.Text = "Login: ";
@@ -339,18 +336,18 @@
             // 
             // 
             this.LoginTextBox.CustomButton.Image = null;
-            this.LoginTextBox.CustomButton.Location = new System.Drawing.Point(245, 1);
-            this.LoginTextBox.CustomButton.Margin = new System.Windows.Forms.Padding(2);
+            this.LoginTextBox.CustomButton.Location = new System.Drawing.Point(439, 1);
+            this.LoginTextBox.CustomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LoginTextBox.CustomButton.Name = "";
-            this.LoginTextBox.CustomButton.Size = new System.Drawing.Size(17, 17);
+            this.LoginTextBox.CustomButton.Size = new System.Drawing.Size(28, 26);
             this.LoginTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.LoginTextBox.CustomButton.TabIndex = 1;
             this.LoginTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.LoginTextBox.CustomButton.UseSelectable = true;
             this.LoginTextBox.CustomButton.Visible = false;
             this.LoginTextBox.Lines = new string[0];
-            this.LoginTextBox.Location = new System.Drawing.Point(18, 283);
-            this.LoginTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.LoginTextBox.Location = new System.Drawing.Point(24, 348);
+            this.LoginTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LoginTextBox.MaxLength = 30;
             this.LoginTextBox.Name = "LoginTextBox";
             this.LoginTextBox.PasswordChar = '\0';
@@ -359,7 +356,7 @@
             this.LoginTextBox.SelectionLength = 0;
             this.LoginTextBox.SelectionStart = 0;
             this.LoginTextBox.ShortcutsEnabled = true;
-            this.LoginTextBox.Size = new System.Drawing.Size(263, 19);
+            this.LoginTextBox.Size = new System.Drawing.Size(351, 23);
             this.LoginTextBox.TabIndex = 32;
             this.LoginTextBox.UseSelectable = true;
             this.LoginTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -370,10 +367,10 @@
             // 
             this.LoginPictureBox.ErrorImage = null;
             this.LoginPictureBox.InitialImage = null;
-            this.LoginPictureBox.Location = new System.Drawing.Point(261, 258);
-            this.LoginPictureBox.Margin = new System.Windows.Forms.Padding(2);
+            this.LoginPictureBox.Location = new System.Drawing.Point(348, 318);
+            this.LoginPictureBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LoginPictureBox.Name = "LoginPictureBox";
-            this.LoginPictureBox.Size = new System.Drawing.Size(20, 20);
+            this.LoginPictureBox.Size = new System.Drawing.Size(27, 25);
             this.LoginPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.LoginPictureBox.TabIndex = 33;
             this.LoginPictureBox.TabStop = false;
@@ -382,10 +379,10 @@
             // 
             this.SurnamePictureBox.ErrorImage = null;
             this.SurnamePictureBox.InitialImage = null;
-            this.SurnamePictureBox.Location = new System.Drawing.Point(261, 136);
-            this.SurnamePictureBox.Margin = new System.Windows.Forms.Padding(2);
+            this.SurnamePictureBox.Location = new System.Drawing.Point(348, 167);
+            this.SurnamePictureBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SurnamePictureBox.Name = "SurnamePictureBox";
-            this.SurnamePictureBox.Size = new System.Drawing.Size(20, 20);
+            this.SurnamePictureBox.Size = new System.Drawing.Size(27, 25);
             this.SurnamePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.SurnamePictureBox.TabIndex = 34;
             this.SurnamePictureBox.TabStop = false;
@@ -394,10 +391,9 @@
             // 
             this.PasswordLabel.AutoSize = true;
             this.PasswordLabel.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.PasswordLabel.Location = new System.Drawing.Point(13, 313);
-            this.PasswordLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.PasswordLabel.Location = new System.Drawing.Point(17, 385);
             this.PasswordLabel.Name = "PasswordLabel";
-            this.PasswordLabel.Size = new System.Drawing.Size(91, 25);
+            this.PasswordLabel.Size = new System.Drawing.Size(94, 25);
             this.PasswordLabel.Style = MetroFramework.MetroColorStyle.Black;
             this.PasswordLabel.TabIndex = 35;
             this.PasswordLabel.Text = "Password: ";
@@ -409,18 +405,18 @@
             // 
             // 
             this.PasswordTextBox.CustomButton.Image = null;
-            this.PasswordTextBox.CustomButton.Location = new System.Drawing.Point(245, 1);
-            this.PasswordTextBox.CustomButton.Margin = new System.Windows.Forms.Padding(2);
+            this.PasswordTextBox.CustomButton.Location = new System.Drawing.Point(439, 1);
+            this.PasswordTextBox.CustomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PasswordTextBox.CustomButton.Name = "";
-            this.PasswordTextBox.CustomButton.Size = new System.Drawing.Size(17, 17);
+            this.PasswordTextBox.CustomButton.Size = new System.Drawing.Size(28, 26);
             this.PasswordTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.PasswordTextBox.CustomButton.TabIndex = 1;
             this.PasswordTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.PasswordTextBox.CustomButton.UseSelectable = true;
             this.PasswordTextBox.CustomButton.Visible = false;
             this.PasswordTextBox.Lines = new string[0];
-            this.PasswordTextBox.Location = new System.Drawing.Point(18, 342);
-            this.PasswordTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.PasswordTextBox.Location = new System.Drawing.Point(24, 421);
+            this.PasswordTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PasswordTextBox.MaxLength = 30;
             this.PasswordTextBox.Name = "PasswordTextBox";
             this.PasswordTextBox.PasswordChar = '●';
@@ -429,7 +425,7 @@
             this.PasswordTextBox.SelectionLength = 0;
             this.PasswordTextBox.SelectionStart = 0;
             this.PasswordTextBox.ShortcutsEnabled = false;
-            this.PasswordTextBox.Size = new System.Drawing.Size(263, 19);
+            this.PasswordTextBox.Size = new System.Drawing.Size(351, 23);
             this.PasswordTextBox.TabIndex = 36;
             this.PasswordTextBox.UseSelectable = true;
             this.PasswordTextBox.UseSystemPasswordChar = true;
@@ -441,10 +437,10 @@
             // 
             this.PasswordPictureBox.ErrorImage = null;
             this.PasswordPictureBox.InitialImage = null;
-            this.PasswordPictureBox.Location = new System.Drawing.Point(261, 318);
-            this.PasswordPictureBox.Margin = new System.Windows.Forms.Padding(2);
+            this.PasswordPictureBox.Location = new System.Drawing.Point(348, 391);
+            this.PasswordPictureBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PasswordPictureBox.Name = "PasswordPictureBox";
-            this.PasswordPictureBox.Size = new System.Drawing.Size(20, 20);
+            this.PasswordPictureBox.Size = new System.Drawing.Size(27, 25);
             this.PasswordPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PasswordPictureBox.TabIndex = 37;
             this.PasswordPictureBox.TabStop = false;
@@ -453,10 +449,9 @@
             // 
             this.RepeatPasswordLabel.AutoSize = true;
             this.RepeatPasswordLabel.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.RepeatPasswordLabel.Location = new System.Drawing.Point(13, 373);
-            this.RepeatPasswordLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.RepeatPasswordLabel.Location = new System.Drawing.Point(17, 459);
             this.RepeatPasswordLabel.Name = "RepeatPasswordLabel";
-            this.RepeatPasswordLabel.Size = new System.Drawing.Size(144, 25);
+            this.RepeatPasswordLabel.Size = new System.Drawing.Size(153, 25);
             this.RepeatPasswordLabel.Style = MetroFramework.MetroColorStyle.Black;
             this.RepeatPasswordLabel.TabIndex = 38;
             this.RepeatPasswordLabel.Text = "Repeat password:";
@@ -468,18 +463,18 @@
             // 
             // 
             this.RepeatPasswordTextBox.CustomButton.Image = null;
-            this.RepeatPasswordTextBox.CustomButton.Location = new System.Drawing.Point(245, 1);
-            this.RepeatPasswordTextBox.CustomButton.Margin = new System.Windows.Forms.Padding(2);
+            this.RepeatPasswordTextBox.CustomButton.Location = new System.Drawing.Point(439, 1);
+            this.RepeatPasswordTextBox.CustomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RepeatPasswordTextBox.CustomButton.Name = "";
-            this.RepeatPasswordTextBox.CustomButton.Size = new System.Drawing.Size(17, 17);
+            this.RepeatPasswordTextBox.CustomButton.Size = new System.Drawing.Size(28, 26);
             this.RepeatPasswordTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.RepeatPasswordTextBox.CustomButton.TabIndex = 1;
             this.RepeatPasswordTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.RepeatPasswordTextBox.CustomButton.UseSelectable = true;
             this.RepeatPasswordTextBox.CustomButton.Visible = false;
             this.RepeatPasswordTextBox.Lines = new string[0];
-            this.RepeatPasswordTextBox.Location = new System.Drawing.Point(18, 402);
-            this.RepeatPasswordTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.RepeatPasswordTextBox.Location = new System.Drawing.Point(24, 495);
+            this.RepeatPasswordTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RepeatPasswordTextBox.MaxLength = 30;
             this.RepeatPasswordTextBox.Name = "RepeatPasswordTextBox";
             this.RepeatPasswordTextBox.PasswordChar = '●';
@@ -488,7 +483,7 @@
             this.RepeatPasswordTextBox.SelectionLength = 0;
             this.RepeatPasswordTextBox.SelectionStart = 0;
             this.RepeatPasswordTextBox.ShortcutsEnabled = false;
-            this.RepeatPasswordTextBox.Size = new System.Drawing.Size(263, 19);
+            this.RepeatPasswordTextBox.Size = new System.Drawing.Size(351, 23);
             this.RepeatPasswordTextBox.TabIndex = 39;
             this.RepeatPasswordTextBox.UseSelectable = true;
             this.RepeatPasswordTextBox.UseSystemPasswordChar = true;
@@ -499,10 +494,10 @@
             // RepeatPasswordPictureBox
             // 
             this.RepeatPasswordPictureBox.InitialImage = null;
-            this.RepeatPasswordPictureBox.Location = new System.Drawing.Point(261, 378);
-            this.RepeatPasswordPictureBox.Margin = new System.Windows.Forms.Padding(2);
+            this.RepeatPasswordPictureBox.Location = new System.Drawing.Point(348, 465);
+            this.RepeatPasswordPictureBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RepeatPasswordPictureBox.Name = "RepeatPasswordPictureBox";
-            this.RepeatPasswordPictureBox.Size = new System.Drawing.Size(20, 20);
+            this.RepeatPasswordPictureBox.Size = new System.Drawing.Size(27, 25);
             this.RepeatPasswordPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.RepeatPasswordPictureBox.TabIndex = 40;
             this.RepeatPasswordPictureBox.TabStop = false;
@@ -512,10 +507,10 @@
             this.CreateAccountButton.FontSize = MetroFramework.MetroButtonSize.Tall;
             this.CreateAccountButton.FontWeight = MetroFramework.MetroButtonWeight.Regular;
             this.CreateAccountButton.Highlight = true;
-            this.CreateAccountButton.Location = new System.Drawing.Point(18, 448);
-            this.CreateAccountButton.Margin = new System.Windows.Forms.Padding(2);
+            this.CreateAccountButton.Location = new System.Drawing.Point(24, 551);
+            this.CreateAccountButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CreateAccountButton.Name = "CreateAccountButton";
-            this.CreateAccountButton.Size = new System.Drawing.Size(263, 30);
+            this.CreateAccountButton.Size = new System.Drawing.Size(351, 37);
             this.CreateAccountButton.TabIndex = 41;
             this.CreateAccountButton.Text = "Create";
             this.CreateAccountButton.UseSelectable = true;
@@ -523,9 +518,9 @@
             // 
             // CreateAccountForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(300, 500);
+            this.ClientSize = new System.Drawing.Size(400, 615);
             this.Controls.Add(this.CreateAccountButton);
             this.Controls.Add(this.RepeatPasswordPictureBox);
             this.Controls.Add(this.RepeatPasswordTextBox);
@@ -548,10 +543,13 @@
             this.Controls.Add(this.NameLabel);
             this.Controls.Add(this.BackButton);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CreateAccountForm";
+            this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
             this.Resizable = false;
+            this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
             this.Text = "Registration";
             this.TextAlign = MetroFramework.Forms.MetroFormTextAlign.Center;
             this.Theme = MetroFramework.MetroThemeStyle.Dark;

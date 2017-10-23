@@ -51,26 +51,27 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Open Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonShadow;
             this.label1.Location = new System.Drawing.Point(14, 94);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 26);
+            this.label1.Size = new System.Drawing.Size(80, 29);
             this.label1.TabIndex = 1;
             this.label1.Text = "Email:";
             // 
             // EmailBox
             // 
-            this.EmailBox.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.EmailBox.Location = new System.Drawing.Point(89, 95);
+            this.EmailBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.EmailBox.Location = new System.Drawing.Point(89, 98);
+            this.EmailBox.MaxLength = 50;
             this.EmailBox.Name = "EmailBox";
-            this.EmailBox.Size = new System.Drawing.Size(185, 25);
+            this.EmailBox.Size = new System.Drawing.Size(185, 26);
             this.EmailBox.TabIndex = 3;
             // 
             // SendCodeButton
             // 
             this.SendCodeButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SendCodeButton.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SendCodeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.SendCodeButton.Location = new System.Drawing.Point(85, 155);
             this.SendCodeButton.Name = "SendCodeButton";
             this.SendCodeButton.Size = new System.Drawing.Size(135, 34);
@@ -81,7 +82,7 @@
             // 
             // ForgotPasswordForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(300, 215);
             this.Controls.Add(this.SendCodeButton);
@@ -95,6 +96,7 @@
             this.Name = "ForgotPasswordForm";
             this.Padding = new System.Windows.Forms.Padding(23, 70, 23, 23);
             this.Resizable = false;
+            this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
             this.Text = "Forgot password?";
             this.TextAlign = MetroFramework.Forms.MetroFormTextAlign.Center;
             this.Theme = MetroFramework.MetroThemeStyle.Dark;

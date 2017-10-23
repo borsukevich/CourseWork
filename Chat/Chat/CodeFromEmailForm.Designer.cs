@@ -37,29 +37,32 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Open Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.label1.Location = new System.Drawing.Point(14, 94);
+            this.label1.Location = new System.Drawing.Point(19, 116);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 26);
+            this.label1.Size = new System.Drawing.Size(78, 29);
             this.label1.TabIndex = 2;
             this.label1.Text = "Code:";
             // 
             // EmailBox
             // 
-            this.EmailBox.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.EmailBox.Location = new System.Drawing.Point(89, 95);
+            this.EmailBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.EmailBox.Location = new System.Drawing.Point(119, 117);
+            this.EmailBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.EmailBox.Name = "EmailBox";
-            this.EmailBox.Size = new System.Drawing.Size(185, 25);
+            this.EmailBox.Size = new System.Drawing.Size(245, 26);
             this.EmailBox.TabIndex = 4;
             // 
             // SubmitCodeButton
             // 
             this.SubmitCodeButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SubmitCodeButton.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SubmitCodeButton.Location = new System.Drawing.Point(85, 155);
+            this.SubmitCodeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SubmitCodeButton.Location = new System.Drawing.Point(113, 191);
+            this.SubmitCodeButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SubmitCodeButton.Name = "SubmitCodeButton";
-            this.SubmitCodeButton.Size = new System.Drawing.Size(135, 34);
+            this.SubmitCodeButton.Size = new System.Drawing.Size(180, 42);
             this.SubmitCodeButton.TabIndex = 8;
             this.SubmitCodeButton.Text = "Submit";
             this.SubmitCodeButton.UseVisualStyleBackColor = true;
@@ -67,17 +70,20 @@
             // 
             // CodeFromEmailForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(300, 215);
+            this.ClientSize = new System.Drawing.Size(400, 265);
             this.Controls.Add(this.SubmitCodeButton);
             this.Controls.Add(this.EmailBox);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CodeFromEmailForm";
+            this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
             this.Resizable = false;
+            this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
             this.Text = "Code";
             this.TextAlign = MetroFramework.Forms.MetroFormTextAlign.Center;
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
