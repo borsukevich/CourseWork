@@ -1,12 +1,16 @@
 ﻿using System;
-using System.Windows.Forms;
-
 namespace Chat
 {
     public partial class CreateAccountForm : MetroFramework.Forms.MetroForm
     {
-        private System.Drawing.Bitmap agreePicturePath = new System.Drawing.Bitmap(@"D:\CourseWork\Pictures\agree.png");
-        private System.Drawing.Bitmap disagreePicturePath = new System.Drawing.Bitmap(@"D:\CourseWork\Pictures\disagree.png");
+        /* When Миша пишет nice код  */
+        //private System.Drawing.Bitmap agreePicturePath = new System.Drawing.Bitmap(@"D:\CourseWork\Pictures\agree.png");
+        //private System.Drawing.Bitmap disagreePicturePath = new System.Drawing.Bitmap(@"D:\CourseWork\Pictures\disagree.png");
+
+        /* When я пишу bad код */
+        private System.Drawing.Bitmap agreePicturePath = new System.Drawing.Bitmap(@"D:\gitRepository\NewCourseWork\Pictures\agree.png");
+        private System.Drawing.Bitmap disagreePicturePath = new System.Drawing.Bitmap(@"D:\gitRepository\NewCourseWork\Pictures\disagree.png");
+
         private SignInForm signInForm = new SignInForm();
         //private UserLogic user;
 
