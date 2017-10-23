@@ -15,7 +15,6 @@ namespace Chat
             InitializeComponent();
         }
 
-
         private void SubmitCodeButton_Click(object sender, EventArgs e)
         {
             SignInForm sif = new SignInForm();

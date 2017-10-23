@@ -24,7 +24,7 @@ namespace Chat
             String pass  = this.GeneratePassword();
             String login = this.EmailBox.Text;
             SendToEmailAsync(pass,login).GetAwaiter();
-
+            
             CodeFromEmailForm pfm = new CodeFromEmailForm(pass);
             this.Close();
             pfm.Show();
