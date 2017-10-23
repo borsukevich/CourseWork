@@ -8,6 +8,7 @@ namespace Chat
         //private System.Drawing.Bitmap disagreePicturePath = new System.Drawing.Bitmap(@"D:\CourseWork\Pictures\disagree.png");
 
         /* When я пишу bad код */
+
         private System.Drawing.Bitmap agreePicturePath = new System.Drawing.Bitmap(@"D:\gitRepository\NewCourseWork\Pictures\agree.png");
         private System.Drawing.Bitmap disagreePicturePath = new System.Drawing.Bitmap(@"D:\gitRepository\NewCourseWork\Pictures\disagree.png");
 
