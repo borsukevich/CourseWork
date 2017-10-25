@@ -4,6 +4,8 @@ namespace Chat
 {
     public partial class CodeFromEmailForm : MetroFramework.Forms.MetroForm
     {
+        private String password;
+
         public CodeFromEmailForm()
         {
             InitializeComponent();
@@ -12,13 +14,21 @@ namespace Chat
         public CodeFromEmailForm(String pass)
         {
             InitializeComponent();
+            this.password = pass;
         }
-
+        
         private void SubmitCodeButton_Click(object sender, EventArgs e)
         {
-            SignInForm sif = new SignInForm();
-            this.Hide();
-            sif.Show();
+            if((!String.IsNullOrEmpty(this.EmailBox.Text) || !String.IsNullOrWhiteSpace(this.EmailBox.Text)) &&  this.password.Equals(this.EmailBox.Text))
+            {
+                SignInForm sif = new SignInForm();
+                this.Hide();
+                sif.Show();
+            }
+            else
+            {
+                System.Windows.Forms.MessageBox.Show("Wrong code", "Error!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+            }
         }
     }
 }
