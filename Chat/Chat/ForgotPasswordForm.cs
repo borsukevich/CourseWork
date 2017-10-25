@@ -23,10 +23,16 @@ namespace Chat
         {
             String pass  = this.GeneratePassword();
             String login = this.EmailBox.Text;
-
-            SendToEmailAsync(pass,login).GetAwaiter();
-            CodeFromEmailForm pfm = new CodeFromEmailForm(pass);
-            pfm.Show();
+            if(String.IsNullOrEmpty(login) || String.IsNullOrWhiteSpace(login))
+            {
+                System.Windows.Forms.MessageBox.Show("Wrong e-mail", "Error!",System.Windows.Forms.MessageBoxButtons.OK,System.Windows.Forms.MessageBoxIcon.Error);
+            }
+            else
+            {
+                SendToEmailAsync(pass,login).GetAwaiter();
+                CodeFromEmailForm pfm = new CodeFromEmailForm(pass);
+                pfm.Show();
+            }
         }
 
         /*
@@ -35,7 +41,7 @@ namespace Chat
         */
         private async Task SendToEmailAsync(String password,String login)
         {
-            MailAddress from = new MailAddress("SendMailToUserTest@gmail.com", "Team Devevelopers");
+            MailAddress from = new MailAddress("SendMailToUserTest@gmail.com", "Team Developers");
             MailAddress to = new MailAddress(login ?? String.Empty);
             MailMessage message = new MailMessage(from, to)
             {
