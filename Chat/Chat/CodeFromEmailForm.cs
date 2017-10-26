@@ -21,9 +21,9 @@ namespace Chat
         {
             if((!String.IsNullOrEmpty(this.EmailBox.Text) || !String.IsNullOrWhiteSpace(this.EmailBox.Text)) &&  this.password.Equals(this.EmailBox.Text))
             {
-                SignInForm sif = new SignInForm();
+                ChangePasswordForm cpf = new ChangePasswordForm();
                 this.Hide();
-                sif.Show();
+                cpf.Show();
             }
             else
             {

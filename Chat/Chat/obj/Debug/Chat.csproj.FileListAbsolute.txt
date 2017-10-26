@@ -30,3 +30,4 @@ D:\gitRepository\NewCourseWork\Chat\Chat\obj\Debug\Chat.Properties.Resources.res
 D:\gitRepository\NewCourseWork\Chat\Chat\obj\Debug\Chat.csproj.GenerateResource.Cache
 D:\gitRepository\NewCourseWork\Chat\Chat\obj\Debug\Chat.exe
 D:\gitRepository\NewCourseWork\Chat\Chat\obj\Debug\Chat.pdb
+D:\gitRepository\NewCourseWork\Chat\Chat\obj\Debug\Chat.ChangePasswordForm.resources
