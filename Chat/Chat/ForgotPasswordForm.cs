@@ -61,15 +61,15 @@ namespace Chat
             Random rnd = new Random();
             Int32 number = rnd.Next(0, 10);
 
-            number = number <= 2 ? 2 : 3;
+            number = number <= 5 ? 2 : 3;
 
             String answer = String.Empty;
 
             if (number == 2)
             {
                 Char[] chrArr = new Char[6];
-                Int32 p1 = rnd.Next(0, 6);
-                Int32 p2 = rnd.Next(0, 6);
+                Int32 p1 = rnd.Next(0, 5);
+                Int32 p2 = rnd.Next(0, 5);
                 p2 = p1 == p2 ? p1++ : p2;
 
                 for (int i = 0; i < chrArr.Length; i++)
@@ -92,9 +92,9 @@ namespace Chat
             else if (number == 3)
             {
                 Char[] chrArr = new Char[6];
-                Int32 p1 = rnd.Next(0, 6);
-                Int32 p2 = rnd.Next(0, 6);
-                Int32 p3 = rnd.Next(0, 6);
+                Int32 p1 = rnd.Next(0, 4);
+                Int32 p2 = rnd.Next(0, 5);
+                Int32 p3 = rnd.Next(0, 5);
 
                 p2 = p1 == p2 ? p1++ : p2;
                 p3 = p2 == p3 ? p2++ : p3;

@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChangePasswordForm));
             this.changeButton = new System.Windows.Forms.Button();
-            this.repeatTextBox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.repeatTextBox = new System.Windows.Forms.TextBox();
             this.passwordLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -49,16 +49,17 @@
             this.changeButton.UseVisualStyleBackColor = true;
             this.changeButton.Click += new System.EventHandler(this.changeButton_Click);
             // 
-            // repeatTextBox
+            // passwordTextBox
             // 
-            this.repeatTextBox.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.repeatTextBox.CausesValidation = false;
-            this.repeatTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.repeatTextBox.Location = new System.Drawing.Point(141, 178);
-            this.repeatTextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.repeatTextBox.Name = "repeatTextBox";
-            this.repeatTextBox.Size = new System.Drawing.Size(245, 26);
-            this.repeatTextBox.TabIndex = 10;
+            this.passwordTextBox.CausesValidation = false;
+            this.passwordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.passwordTextBox.Location = new System.Drawing.Point(141, 113);
+            this.passwordTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.passwordTextBox.MaxLength = 30;
+            this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.Size = new System.Drawing.Size(245, 26);
+            this.passwordTextBox.TabIndex = 10;
+            this.passwordTextBox.UseSystemPasswordChar = true;
             // 
             // label1
             // 
@@ -72,14 +73,17 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "Repeat:";
             // 
-            // passwordTextBox
+            // repeatTextBox
             // 
-            this.passwordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.passwordTextBox.Location = new System.Drawing.Point(141, 109);
-            this.passwordTextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.Size = new System.Drawing.Size(245, 26);
-            this.passwordTextBox.TabIndex = 13;
+            this.repeatTextBox.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.repeatTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.repeatTextBox.Location = new System.Drawing.Point(141, 181);
+            this.repeatTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.repeatTextBox.MaxLength = 30;
+            this.repeatTextBox.Name = "repeatTextBox";
+            this.repeatTextBox.Size = new System.Drawing.Size(245, 26);
+            this.repeatTextBox.TabIndex = 13;
+            this.repeatTextBox.UseSystemPasswordChar = true;
             // 
             // passwordLabel
             // 
@@ -98,10 +102,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(433, 350);
-            this.Controls.Add(this.passwordTextBox);
+            this.Controls.Add(this.repeatTextBox);
             this.Controls.Add(this.passwordLabel);
             this.Controls.Add(this.changeButton);
-            this.Controls.Add(this.repeatTextBox);
+            this.Controls.Add(this.passwordTextBox);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -120,9 +124,9 @@
         #endregion
 
         private System.Windows.Forms.Button changeButton;
-        private System.Windows.Forms.TextBox repeatTextBox;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox passwordTextBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox repeatTextBox;
         private System.Windows.Forms.Label passwordLabel;
     }
 }
