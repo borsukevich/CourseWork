@@ -8,10 +8,11 @@ namespace Chat
             InitializeComponent();
         }
 
-        private void changeButton_Click(object sender, System.EventArgs e)
+        private void changeButton_Click(object sender, EventArgs e)
         {
-            if(this.passwordTextBox.Text.Equals(this.repeatTextBox.Text) && (!String.IsNullOrEmpty(this.passwordTextBox.Text) || !String.IsNullOrWhiteSpace(this.passwordTextBox.Text)))
+            if(this.repeatTextBox.Text.Equals(this.passwordTextBox.Text) && (!String.IsNullOrEmpty(this.repeatTextBox.Text) || !String.IsNullOrWhiteSpace(this.repeatTextBox.Text)))
             {
+
                 SignInForm sif = new SignInForm();
                 this.Hide();
                 sif.Show();
