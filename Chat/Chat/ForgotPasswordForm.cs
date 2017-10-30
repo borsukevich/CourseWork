@@ -21,7 +21,7 @@ namespace Chat
 
         private void SendCodeButton_Click(object sender, EventArgs e)
         {
-            String pass  = this.GeneratePassword();
+            String pass  = GeneratePassword();
             String login = this.EmailBox.Text;
             if(String.IsNullOrEmpty(login) || String.IsNullOrWhiteSpace(login))
             {
@@ -31,6 +31,7 @@ namespace Chat
             {
                 SendToEmailAsync(pass,login).GetAwaiter();
                 CodeFromEmailForm pfm = new CodeFromEmailForm(pass);
+                this.Hide();
                 pfm.Show();
             }
         }
@@ -56,7 +57,7 @@ namespace Chat
             await smtp.SendMailAsync(message);
         }
 
-        private String GeneratePassword()
+        public static String GeneratePassword()
         {
             Random rnd = new Random();
             Int32 number = rnd.Next(0, 10);

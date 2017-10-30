@@ -1,4 +1,9 @@
 ﻿using System;
+using System.Data.SqlClient;
+using System.Threading;
+using System.Security.Cryptography;
+using System.Threading.Tasks;
+using System.Linq;
 namespace Chat
 {
     public partial class CreateAccountForm : MetroFramework.Forms.MetroForm
@@ -11,13 +16,27 @@ namespace Chat
 
         private System.Drawing.Bitmap agreePicturePath = new System.Drawing.Bitmap(@"D:\gitRepository\NewCourseWork\Pictures\agree.png");
         private System.Drawing.Bitmap disagreePicturePath = new System.Drawing.Bitmap(@"D:\gitRepository\NewCourseWork\Pictures\disagree.png");
-
         private SignInForm signInForm = new SignInForm();
-        //private UserLogic user;
-
+   
+        private UserLogic user;
+        private SqlConnection connection;
+        
         public CreateAccountForm()
         {
             InitializeComponent();
+        }
+
+        public static String MD5Hash(String text)
+        {
+            System.Text.StringBuilder hash = new System.Text.StringBuilder();
+            MD5CryptoServiceProvider md5provider = new MD5CryptoServiceProvider();
+            byte[] bytes = md5provider.ComputeHash(new System.Text.UTF8Encoding().GetBytes(text));
+
+            for (int i = 0; i < bytes.Length; i++)
+            {
+                hash.Append(bytes[i].ToString("x2"));
+            }
+            return hash.ToString();
         }
 
         private void BackButton_Click(object sender, EventArgs e)
@@ -92,10 +111,44 @@ namespace Chat
             }
         }
 
-        private void CreateAccountButton_Click(object sender, EventArgs e)
+        private async void CreateAccountButton_Click(object sender, EventArgs e)
         {
+            DateTime birthday = default(DateTime);
+            if (this.userDayBirth.SelectedIndex != -1 && this.userMonthBirth.SelectedIndex != -1 && this.userYearBirth.SelectedIndex != -1)
+            {
+                birthday = new DateTime(this.userYearBirth.SelectedIndex + 1975, this.userMonthBirth.SelectedIndex + 1, this.userDayBirth.SelectedIndex + 1);
+            }
+            String salt = ForgotPasswordForm.GeneratePassword();
+            String hashPassword = MD5Hash(this.PasswordTextBox.Text + salt);
+            this.user = new UserLogic(this.LoginTextBox.Text, hashPassword, this.NameTextBox.Text, this.SurnameTextBox.Text, birthday, salt, DateTime.Now);
+            
+            SqlCommand command = new SqlCommand("INSERT INTO [userData] (Login,Password,Name,Surname,Birthday,Salt,Registry) VALUES(@Login,@Password,@Name,@Surname,@Birthday,@Salt,@Registry)", this.connection);
+            command.Parameters.AddWithValue("Login", user.Login);
+            command.Parameters.AddWithValue("Password", user.Password);
+            command.Parameters.AddWithValue("Name", user.Name);
+            command.Parameters.AddWithValue("Surname", user.Surname);
+            command.Parameters.AddWithValue("Birthday", user.Birthday);
+            command.Parameters.AddWithValue("Salt", user.Salt);
+            command.Parameters.AddWithValue("Registry", user.Registry);
+
+            await command.ExecuteNonQueryAsync();
+
             this.Close();
             signInForm.Show();
+        }
+
+        private async void CreateAccountForm_Load(object sender, EventArgs e)
+        {
+            this.connection = new SqlConnection(@"Data Source=DESKTOP-V0DIBPT;Initial Catalog=courseWorkDB;Integrated Security=True");
+            await this.connection.OpenAsync();
+        }
+
+        private void CreateAccountForm_FormClosing(object sender, System.Windows.Forms.FormClosingEventArgs e)
+        {
+            if (this.connection != null && this.connection.State != System.Data.ConnectionState.Closed)
+            {
+                this.connection.Close();
+            }
         }
     }
 }

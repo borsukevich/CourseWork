@@ -50,7 +50,7 @@
             // 
             this.EmailBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.EmailBox.Location = new System.Drawing.Point(119, 117);
-            this.EmailBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EmailBox.Margin = new System.Windows.Forms.Padding(4);
             this.EmailBox.Name = "EmailBox";
             this.EmailBox.Size = new System.Drawing.Size(245, 26);
             this.EmailBox.TabIndex = 4;
@@ -60,7 +60,7 @@
             this.SubmitCodeButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SubmitCodeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.SubmitCodeButton.Location = new System.Drawing.Point(113, 191);
-            this.SubmitCodeButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SubmitCodeButton.Margin = new System.Windows.Forms.Padding(4);
             this.SubmitCodeButton.Name = "SubmitCodeButton";
             this.SubmitCodeButton.Size = new System.Drawing.Size(180, 42);
             this.SubmitCodeButton.TabIndex = 8;
@@ -77,7 +77,7 @@
             this.Controls.Add(this.EmailBox);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CodeFromEmailForm";

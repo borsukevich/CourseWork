@@ -147,6 +147,8 @@
             this.Text = "Sign in";
             this.TextAlign = MetroFramework.Forms.MetroFormTextAlign.Center;
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SignInForm_FormClosing);
+            this.Load += new System.EventHandler(this.SignInForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

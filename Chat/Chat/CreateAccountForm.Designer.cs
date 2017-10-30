@@ -64,7 +64,7 @@
             this.BackButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BackButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BackButton.Location = new System.Drawing.Point(24, 28);
-            this.BackButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BackButton.Margin = new System.Windows.Forms.Padding(4);
             this.BackButton.Name = "BackButton";
             this.BackButton.Size = new System.Drawing.Size(40, 37);
             this.BackButton.TabIndex = 21;
@@ -90,10 +90,10 @@
             // 
             // 
             this.NameTextBox.CustomButton.Image = null;
-            this.NameTextBox.CustomButton.Location = new System.Drawing.Point(439, 1);
+            this.NameTextBox.CustomButton.Location = new System.Drawing.Point(329, 1);
             this.NameTextBox.CustomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.NameTextBox.CustomButton.Name = "";
-            this.NameTextBox.CustomButton.Size = new System.Drawing.Size(28, 26);
+            this.NameTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.NameTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.NameTextBox.CustomButton.TabIndex = 1;
             this.NameTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -147,10 +147,10 @@
             // 
             // 
             this.SurnameTextBox.CustomButton.Image = null;
-            this.SurnameTextBox.CustomButton.Location = new System.Drawing.Point(439, 1);
+            this.SurnameTextBox.CustomButton.Location = new System.Drawing.Point(329, 1);
             this.SurnameTextBox.CustomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SurnameTextBox.CustomButton.Name = "";
-            this.SurnameTextBox.CustomButton.Size = new System.Drawing.Size(28, 26);
+            this.SurnameTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.SurnameTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.SurnameTextBox.CustomButton.TabIndex = 1;
             this.SurnameTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -336,10 +336,10 @@
             // 
             // 
             this.LoginTextBox.CustomButton.Image = null;
-            this.LoginTextBox.CustomButton.Location = new System.Drawing.Point(439, 1);
+            this.LoginTextBox.CustomButton.Location = new System.Drawing.Point(329, 1);
             this.LoginTextBox.CustomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LoginTextBox.CustomButton.Name = "";
-            this.LoginTextBox.CustomButton.Size = new System.Drawing.Size(28, 26);
+            this.LoginTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.LoginTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.LoginTextBox.CustomButton.TabIndex = 1;
             this.LoginTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -405,10 +405,10 @@
             // 
             // 
             this.PasswordTextBox.CustomButton.Image = null;
-            this.PasswordTextBox.CustomButton.Location = new System.Drawing.Point(439, 1);
+            this.PasswordTextBox.CustomButton.Location = new System.Drawing.Point(329, 1);
             this.PasswordTextBox.CustomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PasswordTextBox.CustomButton.Name = "";
-            this.PasswordTextBox.CustomButton.Size = new System.Drawing.Size(28, 26);
+            this.PasswordTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.PasswordTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.PasswordTextBox.CustomButton.TabIndex = 1;
             this.PasswordTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -463,10 +463,10 @@
             // 
             // 
             this.RepeatPasswordTextBox.CustomButton.Image = null;
-            this.RepeatPasswordTextBox.CustomButton.Location = new System.Drawing.Point(439, 1);
+            this.RepeatPasswordTextBox.CustomButton.Location = new System.Drawing.Point(329, 1);
             this.RepeatPasswordTextBox.CustomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RepeatPasswordTextBox.CustomButton.Name = "";
-            this.RepeatPasswordTextBox.CustomButton.Size = new System.Drawing.Size(28, 26);
+            this.RepeatPasswordTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.RepeatPasswordTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.RepeatPasswordTextBox.CustomButton.TabIndex = 1;
             this.RepeatPasswordTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -543,7 +543,7 @@
             this.Controls.Add(this.NameLabel);
             this.Controls.Add(this.BackButton);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CreateAccountForm";
@@ -553,6 +553,8 @@
             this.Text = "Registration";
             this.TextAlign = MetroFramework.Forms.MetroFormTextAlign.Center;
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CreateAccountForm_FormClosing);
+            this.Load += new System.EventHandler(this.CreateAccountForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.BackButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NamePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LoginPictureBox)).EndInit();
