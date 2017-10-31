@@ -44,7 +44,7 @@
             this.changeButton.Margin = new System.Windows.Forms.Padding(4);
             this.changeButton.Name = "changeButton";
             this.changeButton.Size = new System.Drawing.Size(180, 42);
-            this.changeButton.TabIndex = 11;
+            this.changeButton.TabIndex = 1;
             this.changeButton.Text = "Change";
             this.changeButton.UseVisualStyleBackColor = true;
             this.changeButton.Click += new System.EventHandler(this.changeButton_Click);
@@ -58,7 +58,7 @@
             this.passwordTextBox.MaxLength = 30;
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(245, 26);
-            this.passwordTextBox.TabIndex = 10;
+            this.passwordTextBox.TabIndex = 1;
             this.passwordTextBox.UseSystemPasswordChar = true;
             // 
             // label1
@@ -82,7 +82,7 @@
             this.repeatTextBox.MaxLength = 30;
             this.repeatTextBox.Name = "repeatTextBox";
             this.repeatTextBox.Size = new System.Drawing.Size(245, 26);
-            this.repeatTextBox.TabIndex = 13;
+            this.repeatTextBox.TabIndex = 1;
             this.repeatTextBox.UseSystemPasswordChar = true;
             // 
             // passwordLabel
