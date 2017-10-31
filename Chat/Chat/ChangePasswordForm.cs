@@ -22,40 +22,43 @@ namespace Chat
         {
             if (this.repeatTextBox.Text.Equals(this.passwordTextBox.Text) && (!String.IsNullOrEmpty(this.repeatTextBox.Text) || !String.IsNullOrWhiteSpace(this.repeatTextBox.Text)))
             {
-                //    SqlCommand command = new SqlCommand("SELECT Salt FROM userData WHERE Login ='" + this.login + "'", this.connection);
-                //    SqlDataReader sqlReader = null;
-
-                //    try
-                //    {
-                //        sqlReader = await command.ExecuteReaderAsync();
-                //        while (await sqlReader.ReadAsync())
-                //        {
-                //            String hash = CreateAccountForm.MD5Hash(this.repeatTextBox.Text + sqlReader["Salt"].ToString());
-                //            SqlCommand insertCommand = new SqlCommand("INSERT INTO [userData] (Password) VALUES(@Password) WHERE Login ='" + this.login + "'", this.connection);
-                //            insertCommand.Parameters.AddWithValue("Password", hash);
-                //            await insertCommand.ExecuteNonQueryAsync();
-                //        }
-                //    }
-                //    catch (Exception ex)
-                //    {
-                //        System.Windows.Forms.MessageBox.Show(ex.Message, ex.Source, System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
-                //    }
-                //    finally
-                //    {
-                //        if(sqlReader != null)
-                //        {
-                //            sqlReader.Close();
-                //        }
-                //    }
-                //    SignInForm sif = new SignInForm();
-                //    this.Hide();
-                //    sif.Show();
-                //}
-                //else
-                //{
-                //    System.Windows.Forms.MessageBox.Show("Passwords are different", "Error!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
-                //}
+                SqlDataReader sqlReader = null;
+                SqlCommand command = new SqlCommand("SELECT Salt FROM userData WHERE Login = '" + this.login + @"'" , this.connection);
+                SqlCommand updateCommand = null;
+                try
+                {
+                    sqlReader = await command.ExecuteReaderAsync();
+                    while (await sqlReader.ReadAsync())
+                    {
+                        String hash = CreateAccountForm.MD5Hash(this.passwordTextBox.Text + sqlReader["Salt"].ToString());
+                        updateCommand = new SqlCommand("UPDATE [userData] SET [Password]=@Password WHERE Login='" + this.login + @"'", this.connection);
+                        updateCommand.Parameters.AddWithValue("Password", hash);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    System.Windows.Forms.MessageBox.Show(ex.Message, ex.Source, System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    if(sqlReader != null)
+                    {
+                        sqlReader.Close();
+                    }
+                    if (updateCommand != null)
+                    {
+                        await updateCommand.ExecuteNonQueryAsync();
+                    }
+                }
+                SignInForm sif = new SignInForm();
+                this.Hide();
+                sif.Show();
             }
+            else
+            {
+                System.Windows.Forms.MessageBox.Show("Different passwords", "Error", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+            }
+            
         }
 
         private async void ChangePasswordForm_Load(object sender, EventArgs e)

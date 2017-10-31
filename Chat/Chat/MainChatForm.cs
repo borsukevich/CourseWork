@@ -13,12 +13,11 @@ namespace Chat
         private void metroButton1_Click(object sender, EventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog();
-         
+
             /* When Миша пишет nice код  */
             //dialog.InitialDirectory = @"D:\CourseWork\Pictures";
 
-            /* When я пишу bad код */
-            dialog.InitialDirectory = @"D:\gitRepository\NewCourseWork\Pictures";
+            dialog.InitialDirectory = Environment.CurrentDirectory;
 
             dialog.Filter = "Image files (*.jpg, *.jpeg, *.png) | *.jpg; *.jped; *.png";
 

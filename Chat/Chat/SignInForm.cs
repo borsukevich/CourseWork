@@ -28,41 +28,47 @@ namespace Chat
 
         private async void SignInButton_Click(object sender, EventArgs e)
         {
-
-            SqlDataReader sqlReader = null;
-            SqlCommand command = new SqlCommand(@"SELECT Login, Password, Salt FROM userData WHERE Login = '" + this.LoginBox.Text + @"'", this.connection);
-
-            try
+            if (!String.IsNullOrEmpty(this.LoginBox.Text) && !String.IsNullOrWhiteSpace(this.LoginBox.Text) && !String.IsNullOrWhiteSpace(this.PasswordBox.Text) && !String.IsNullOrEmpty(this.PasswordBox.Text))
             {
-                sqlReader = await command.ExecuteReaderAsync();
-                while (await sqlReader.ReadAsync())
+
+                SqlDataReader sqlReader = null;
+                SqlCommand command = new SqlCommand(@"SELECT Login, Password, Salt FROM userData WHERE Login = '" + this.LoginBox.Text + @"'", this.connection);
+
+                try
                 {
-                    String hash = CreateAccountForm.MD5Hash(this.PasswordBox.Text + sqlReader["Salt"].ToString());
-                    if(hash == sqlReader["Password"].ToString())
+                    sqlReader = await command.ExecuteReaderAsync();
+                    while (await sqlReader.ReadAsync())
                     {
-                        MainChatForm mcf = new MainChatForm();
-                        this.Hide();
-                        mcf.Show();
+                        String hash = CreateAccountForm.MD5Hash(this.PasswordBox.Text + sqlReader["Salt"].ToString());
+                        if (hash == sqlReader["Password"].ToString())
+                        {
+                            MainChatForm mcf = new MainChatForm();
+                            this.Hide();
+                            mcf.Show();
+                        }
+                        else
+                        {
+                            System.Windows.Forms.MessageBox.Show("Wrong e-mail or password", "Error", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+                        }
                     }
-                    else
+                }
+                catch (Exception ex)
+                {
+
+                    System.Windows.Forms.MessageBox.Show(ex.Message, ex.Source, System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    if (sqlReader != null)
                     {
-                        System.Windows.Forms.MessageBox.Show("Wrong e-mail or password", "Error", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+                        sqlReader.Close();
                     }
                 }
             }
-            catch (Exception ex)
+            else
             {
-
-                System.Windows.Forms.MessageBox.Show(ex.Message, ex.Source, System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+                System.Windows.Forms.MessageBox.Show("Wrog login or password", "Error", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
             }
-            finally
-            {
-                if (sqlReader != null)
-                {
-                    sqlReader.Close();
-                }
-            }
-
          
         }
 

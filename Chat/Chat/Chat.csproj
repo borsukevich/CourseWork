@@ -139,5 +139,14 @@
   <ItemGroup>
     <None Include="Resources\back.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\agree.png" />
+    <Content Include="Resources\disagree.png" />
+    <Content Include="Resources\exchange.png" />
+    <Content Include="Resources\loadPicture2.ico" />
+    <Content Include="Resources\search.png" />
+    <Content Include="Resources\sendMessage.png" />
+    <Content Include="Resources\userDefault.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
