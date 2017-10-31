@@ -30,7 +30,7 @@ namespace Chat
             else
             {
                 SendToEmailAsync(pass,login).GetAwaiter();
-                CodeFromEmailForm pfm = new CodeFromEmailForm(pass);
+                CodeFromEmailForm pfm = new CodeFromEmailForm(login,pass);
                 this.Hide();
                 pfm.Show();
             }

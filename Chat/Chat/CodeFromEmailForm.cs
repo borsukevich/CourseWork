@@ -5,23 +5,26 @@ namespace Chat
     public partial class CodeFromEmailForm : MetroFramework.Forms.MetroForm
     {
         private String password;
-
+        private String login;
+      
         public CodeFromEmailForm()
         {
             InitializeComponent();
         }
          
-        public CodeFromEmailForm(String pass)
+        public CodeFromEmailForm(String login, String pass)
         {
             InitializeComponent();
+            this.login = login;
             this.password = pass;
+
         }
         
         private void SubmitCodeButton_Click(object sender, EventArgs e)
         {
             if((!String.IsNullOrEmpty(this.EmailBox.Text) || !String.IsNullOrWhiteSpace(this.EmailBox.Text)) &&  this.password.Equals(this.EmailBox.Text))
             {
-                ChangePasswordForm cpf = new ChangePasswordForm();
+                ChangePasswordForm cpf = new ChangePasswordForm(this.login);
                 this.Hide();
                 cpf.Show();
             }

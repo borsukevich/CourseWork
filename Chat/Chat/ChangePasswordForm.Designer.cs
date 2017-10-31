@@ -116,6 +116,8 @@
             this.Text = "New Password";
             this.TextAlign = MetroFramework.Forms.MetroFormTextAlign.Center;
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ChangePasswordForm_FormClosing);
+            this.Load += new System.EventHandler(this.ChangePasswordForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
