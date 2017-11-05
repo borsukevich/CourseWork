@@ -67,14 +67,15 @@ namespace Chat
             }
             else
             {
-                System.Windows.Forms.MessageBox.Show("Wrog login or password", "Error", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+                System.Windows.Forms.MessageBox.Show("Wrong login or password", "Error", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
             }
          
         }
 
         private async void SignInForm_Load(object sender, EventArgs e)
         {
-            this.connection = new SqlConnection(@"Data Source=DESKTOP-V0DIBPT;Initial Catalog=courseWorkDB;User id=localhostserver;Password=localhost123");
+            this.connection = new SqlConnection(@"Data Source=DESKTOP-V0DIBPT;Initial Catalog=courseWorkDB;User id=sa;Password=123456");
+            // this.connection = new SqlConnection(@"Data Source=desktop-v0dibpt;Initial Catalog=courseWorkDB;User id=localhostserver;Password=localhost123");
             //this.connection = new SqlConnection(@"Data Source=DESKTOP-V0DIBPT;Initial Catalog=courseWorkDB;Integrated Security=True");
             await this.connection.OpenAsync();
         }
