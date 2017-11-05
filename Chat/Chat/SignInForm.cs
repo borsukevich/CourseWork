@@ -32,8 +32,8 @@ namespace Chat
             {
 
                 SqlDataReader sqlReader = null;
-                SqlCommand command = new SqlCommand(@"SELECT Login, Password, Salt FROM userData WHERE Login = '" + this.LoginBox.Text + @"'", this.connection);
-
+                SqlCommand command = new SqlCommand(@"SELECT * FROM userData WHERE Login = '" + this.LoginBox.Text + @"'", this.connection);
+                UserLogic user = null;
                 try
                 {
                     sqlReader = await command.ExecuteReaderAsync();
@@ -42,9 +42,16 @@ namespace Chat
                         String hash = CreateAccountForm.MD5Hash(this.PasswordBox.Text + sqlReader["Salt"].ToString());
                         if (hash == sqlReader["Password"].ToString())
                         {
-                            MainChatForm mcf = new MainChatForm();
-                            this.Hide();
-                            mcf.Show();
+                            String login = sqlReader["Login"].ToString();
+                            String password = sqlReader["Password"].ToString();
+                            String name = sqlReader["Name"].ToString();
+                            String surname = sqlReader["Surname"].ToString();
+                            DateTime birthday = Convert.ToDateTime(sqlReader["Birthday"].ToString());
+                            String salt = sqlReader["Salt"].ToString();
+                            DateTime registry = Convert.ToDateTime(sqlReader["Registry"].ToString());
+                            
+                            user = new UserLogic(login,password,name,surname,birthday,salt,registry);
+                            
                         }
                         else
                         {
@@ -64,6 +71,13 @@ namespace Chat
                         sqlReader.Close();
                     }
                 }
+
+                if(user != null)
+                {
+                    MainChatForm mcf = new MainChatForm(user);
+                    this.Hide();
+                    mcf.Show();
+                }
             }
             else
             {
@@ -74,8 +88,8 @@ namespace Chat
 
         private async void SignInForm_Load(object sender, EventArgs e)
         {
-            this.connection = new SqlConnection(@"Data Source=DESKTOP-V0DIBPT;Initial Catalog=courseWorkDB;User id=sa;Password=123456");
-            // this.connection = new SqlConnection(@"Data Source=desktop-v0dibpt;Initial Catalog=courseWorkDB;User id=localhostserver;Password=localhost123");
+            this.connection = new SqlConnection(@"Data Source=desktop-v0dibpt;Initial Catalog=courseWorkDB;User id=sa;Password=123456;");
+            //this.connection = new SqlConnection(@"Data Source=desktop-v0dibpt;Initial Catalog=courseWorkDB;User id=localhostserver;Password=localhost123");
             //this.connection = new SqlConnection(@"Data Source=DESKTOP-V0DIBPT;Initial Catalog=courseWorkDB;Integrated Security=True");
             await this.connection.OpenAsync();
         }

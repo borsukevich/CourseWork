@@ -3,9 +3,8 @@ namespace Chat
 {
     class UserLogic
     {
-        public UserLogic(/*Int32 id,*/String login,String password,String name,String surname,DateTime birthday,String salt,DateTime registry)
+        public UserLogic(String login,String password,String name,String surname,DateTime birthday,String salt,DateTime registry,String picturePath = default(String))
         {
-    //        this.Id = id;
             this.Login = login;
             this.Password = password;
             this.Name = name;
@@ -13,9 +12,9 @@ namespace Chat
             this.Birthday = birthday;
             this.Salt = salt;
             this.Registry = registry;
+            this.PicturePath = picturePath;
         }
-
-  //      public Int32 Id { get; set; }
+        
         public String Login { get; set; }
         public String Password { get; set; }
         public String Name { get; set; }
@@ -23,5 +22,6 @@ namespace Chat
         public DateTime Birthday { get; set; }
         public String Salt { get; set; }
         public DateTime Registry { get; set; }
+        public String PicturePath { get; set; }
     }
 }
