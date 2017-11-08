@@ -1,15 +1,24 @@
 ﻿using System;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 namespace Chat
 {
     public partial class SignInForm : MetroFramework.Forms.MetroForm
     {
-        private SqlConnection connection;
+        private MySqlConnectionStringBuilder connectStr;
+        private MySqlConnection connection;
 
         public SignInForm()
         {
             InitializeComponent();
+            this.connectStr = new MySqlConnectionStringBuilder()
+            {
+                Server = "sql11.freesqldatabase.com",
+                UserID = "sql11203716",
+                Password = "wkTIqh2Sm7",
+                Database = "sql11203716"
+            };
+            this.connection = new MySqlConnection(this.connectStr.ToString());
         }
 
         private void ForgotPasswordLabel_Click(object sender, EventArgs e)
@@ -30,48 +39,40 @@ namespace Chat
         {
             if (!String.IsNullOrEmpty(this.LoginBox.Text) && !String.IsNullOrWhiteSpace(this.LoginBox.Text) && !String.IsNullOrWhiteSpace(this.PasswordBox.Text) && !String.IsNullOrEmpty(this.PasswordBox.Text))
             {
-
-                SqlDataReader sqlReader = null;
-                SqlCommand command = new SqlCommand(@"SELECT * FROM userData WHERE Login = '" + this.LoginBox.Text + @"'", this.connection);
+                MySqlCommand command = this.connection.CreateCommand();
+                command.CommandText = @"SELECT * FROM User WHERE login = '" + this.LoginBox.Text + @"'";
+                System.Data.Common.DbDataReader dataReader = null;
+                dataReader = command.ExecuteReaderAsync().Result;
                 UserLogic user = null;
                 try
                 {
-                    sqlReader = await command.ExecuteReaderAsync();
-                    while (await sqlReader.ReadAsync())
+                    while (await dataReader.ReadAsync())
                     {
-                        String hash = CreateAccountForm.MD5Hash(this.PasswordBox.Text + sqlReader["Salt"].ToString());
-                        if (hash == sqlReader["Password"].ToString())
+                        String hash = CreateAccountForm.MD5Hash(this.PasswordBox.Text + dataReader["salt"].ToString().Substring(1));
+                        if (hash.Equals(dataReader["password"].ToString()))
                         {
-                            String login = sqlReader["Login"].ToString();
-                            String password = sqlReader["Password"].ToString();
-                            String name = sqlReader["Name"].ToString();
-                            String surname = sqlReader["Surname"].ToString();
-                            DateTime birthday = Convert.ToDateTime(sqlReader["Birthday"].ToString());
-                            String salt = sqlReader["Salt"].ToString();
-                            DateTime registry = Convert.ToDateTime(sqlReader["Registry"].ToString());
-                            
-                            user = new UserLogic(login,password,name,surname,birthday,salt,registry);
-                            
-                        }
-                        else
-                        {
-                            System.Windows.Forms.MessageBox.Show("Wrong e-mail or password", "Error", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+                            String login = dataReader["login"].ToString();
+                            String password = dataReader["password"].ToString();
+                            String name = dataReader["name"].ToString();
+                            String surname = dataReader["surname"].ToString();
+                            String birthday = dataReader["birthday"].ToString();
+                            String salt = dataReader["salt"].ToString();
+                            String registry = dataReader["registry"].ToString();
+                            user = new UserLogic(login, password, name, surname, birthday, salt, registry);
                         }
                     }
                 }
                 catch (Exception ex)
                 {
-
                     System.Windows.Forms.MessageBox.Show(ex.Message, ex.Source, System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
                 }
                 finally
                 {
-                    if (sqlReader != null)
+                    if (dataReader != null)
                     {
-                        sqlReader.Close();
+                        dataReader.Close();
                     }
                 }
-
                 if(user != null)
                 {
                     MainChatForm mcf = new MainChatForm(user);
@@ -83,20 +84,16 @@ namespace Chat
             {
                 System.Windows.Forms.MessageBox.Show("Wrong login or password", "Error", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
             }
-         
         }
 
         private async void SignInForm_Load(object sender, EventArgs e)
         {
-            this.connection = new SqlConnection(@"Data Source=desktop-v0dibpt;Initial Catalog=courseWorkDB;User id=sa;Password=123456;");
-            //this.connection = new SqlConnection(@"Data Source=desktop-v0dibpt;Initial Catalog=courseWorkDB;User id=localhostserver;Password=localhost123");
-            //this.connection = new SqlConnection(@"Data Source=DESKTOP-V0DIBPT;Initial Catalog=courseWorkDB;Integrated Security=True");
             await this.connection.OpenAsync();
         }
 
         private void SignInForm_FormClosing(object sender, System.Windows.Forms.FormClosingEventArgs e)
         {
-            if(this.connection != null && this.connection.State != System.Data.ConnectionState.Closed)
+            if (this.connection != null && this.connection.State != System.Data.ConnectionState.Closed)
             {
                 this.connection.Close();
             }

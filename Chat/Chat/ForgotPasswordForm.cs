@@ -40,6 +40,7 @@ namespace Chat
             Login: SendMailToUserTest@gmail.com
             Pass:  sendingMessageToUSER123
         */
+
         private async Task SendToEmailAsync(String password,String login)
         {
             MailAddress from = new MailAddress("SendMailToUserTest@gmail.com", "Team Developers");

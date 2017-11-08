@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 using System.Security.Cryptography;
 
 namespace Chat
@@ -8,15 +8,22 @@ namespace Chat
     {
         private System.Drawing.Bitmap agreePicturePath = new System.Drawing.Bitmap(@"..\..\Resources\agree.png");
         private System.Drawing.Bitmap disagreePicturePath = new System.Drawing.Bitmap(@"..\..\Resources\disagree.png");
-        
-        private SignInForm signInForm = new SignInForm();
-   
+        private SignInForm signInForm = new SignInForm();   
         private UserLogic user;
-        private SqlConnection connection;
-        
+        private MySqlConnectionStringBuilder connectStr;
+        private MySqlConnection connection;
+
         public CreateAccountForm()
         {
             InitializeComponent();
+            this.connectStr = new MySqlConnectionStringBuilder()
+            {
+                Server = "sql11.freesqldatabase.com",
+                UserID = "sql11203716",
+                Password = "wkTIqh2Sm7",
+                Database = "sql11203716"
+            };
+            this.connection = new MySqlConnection(this.connectStr.ToString());
         }
 
         public static String MD5Hash(String text)
@@ -106,35 +113,24 @@ namespace Chat
 
         private async void CreateAccountButton_Click(object sender, EventArgs e)
         {
-            DateTime birthday = default(DateTime);
+            System.String birthday = System.String.Empty;
             if (this.userDayBirth.SelectedIndex != -1 && this.userMonthBirth.SelectedIndex != -1 && this.userYearBirth.SelectedIndex != -1)
             {
-                birthday = new DateTime(this.userYearBirth.SelectedIndex + 1975, this.userMonthBirth.SelectedIndex + 1, this.userDayBirth.SelectedIndex + 1);
+                birthday = $"{this.userYearBirth.SelectedIndex + 1975}-{this.userMonthBirth.SelectedIndex + 1}-{this.userDayBirth.SelectedIndex + 1}";
             }
             String salt = ForgotPasswordForm.GeneratePassword();
             String hashPassword = MD5Hash(this.PasswordTextBox.Text + salt);
-            this.user = new UserLogic(this.LoginTextBox.Text, hashPassword, this.NameTextBox.Text, this.SurnameTextBox.Text, birthday, salt, DateTime.Now);
+            this.user = new UserLogic(this.LoginTextBox.Text, hashPassword, this.NameTextBox.Text, this.SurnameTextBox.Text, birthday, salt, DateTime.Now.ToString("s"));
             
-            SqlCommand command = new SqlCommand("INSERT INTO [userData] (Login,Password,Name,Surname,Birthday,Salt,Registry) VALUES(@Login,@Password,@Name,@Surname,@Birthday,@Salt,@Registry)", this.connection);
-            command.Parameters.AddWithValue("Login", user.Login);
-            command.Parameters.AddWithValue("Password", user.Password);
-            command.Parameters.AddWithValue("Name", user.Name);
-            command.Parameters.AddWithValue("Surname", user.Surname);
-            command.Parameters.AddWithValue("Birthday", user.Birthday);
-            command.Parameters.AddWithValue("Salt", user.Salt);
-            command.Parameters.AddWithValue("Registry", user.Registry);
-
+            MySqlCommand command = this.connection.CreateCommand();
+            command.CommandText = $"INSERT INTO User(login,password,name,surname,birthday,salt,registry) VALUES('{this.user.Login}', '{this.user.Password}', '{this.user.Name}', '{this.user.Surname}', '{this.user.Birthday}',' {this.user.Salt}', '{this.user.Registry}')";
             await command.ExecuteNonQueryAsync();
-
             this.Close();
             signInForm.Show();
         }
 
         private async void CreateAccountForm_Load(object sender, EventArgs e)
         {
-            this.connection = new SqlConnection(@"Data Source=DESKTOP-V0DIBPT;Initial Catalog=courseWorkDB;User id=sa;Password=123456;Integrated Security=True");
-            //this.connection = new SqlConnection(@"Data Source=DESKTOP-V0DIBPT;Initial Catalog=courseWorkDB;User id=localhostserver;Password=localhost123;Integrated Security=True");
-            //this.connection = new SqlConnection(@"Data Source=DESKTOP-V0DIBPT;Initial Catalog=courseWorkDB;Integrated Security=True");
             await this.connection.OpenAsync();
         }
 

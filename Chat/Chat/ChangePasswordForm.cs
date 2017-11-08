@@ -1,20 +1,30 @@
 ﻿using System;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 namespace Chat
 {
     public partial class ChangePasswordForm : MetroFramework.Forms.MetroForm
     {
         private String login;
-        private SqlConnection connection;
+        private MySqlConnectionStringBuilder connectStr;
+        private MySqlConnection connection;
 
         public ChangePasswordForm()
         {
             InitializeComponent();
         }
+
         public ChangePasswordForm(String login)
         {
             InitializeComponent();
+            this.connectStr = new MySqlConnectionStringBuilder()
+            {
+                Server = "sql11.freesqldatabase.com",
+                UserID = "sql11203716",
+                Password = "wkTIqh2Sm7",
+                Database = "sql11203716"
+            };
+            this.connection = new MySqlConnection(this.connectStr.ToString());
             this.login = login;
         }
 
@@ -22,17 +32,19 @@ namespace Chat
         {
             if (this.repeatTextBox.Text.Equals(this.passwordTextBox.Text) && (!String.IsNullOrEmpty(this.repeatTextBox.Text) || !String.IsNullOrWhiteSpace(this.repeatTextBox.Text)))
             {
-                SqlDataReader sqlReader = null;
-                SqlCommand command = new SqlCommand("SELECT Salt FROM userData WHERE Login = '" + this.login + @"'" , this.connection);
-                SqlCommand updateCommand = null;
+                MySqlCommand command = this.connection.CreateCommand();            
+                command.CommandText = @"SELECT salt FROM User WHERE login = '" + this.login + @"'";
+                System.Data.Common.DbDataReader dataReader = null;
+                MySqlCommand updateCommand = this.connection.CreateCommand();
+                
                 try
                 {
-                    sqlReader = await command.ExecuteReaderAsync();
-                    while (await sqlReader.ReadAsync())
+                    dataReader = await command.ExecuteReaderAsync();
+
+                    while (await dataReader.ReadAsync())
                     {
-                        String hash = CreateAccountForm.MD5Hash(this.passwordTextBox.Text + sqlReader["Salt"].ToString());
-                        updateCommand = new SqlCommand("UPDATE [userData] SET [Password]=@Password WHERE Login='" + this.login + @"'", this.connection);
-                        updateCommand.Parameters.AddWithValue("Password", hash);
+                        String hash = CreateAccountForm.MD5Hash(this.passwordTextBox.Text + dataReader["Salt"].ToString().Substring(1));
+                        updateCommand.CommandText = $"UPDATE User SET password='{hash}' WHERE login='{this.login}';";
                     }
                 }
                 catch (Exception ex)
@@ -41,9 +53,9 @@ namespace Chat
                 }
                 finally
                 {
-                    if(sqlReader != null)
+                    if(dataReader != null)
                     {
-                        sqlReader.Close();
+                        dataReader.Close();
                     }
                     if (updateCommand != null)
                     {
@@ -58,14 +70,10 @@ namespace Chat
             {
                 System.Windows.Forms.MessageBox.Show("Different passwords", "Error", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
             }
-            
         }
 
         private async void ChangePasswordForm_Load(object sender, EventArgs e)
         {
-            this.connection = new SqlConnection(@"Data Source=DESKTOP-V0DIBPT;Initial Catalog=courseWorkDB;User id=sa;Password=123456;Integrated Security=True");
-            //this.connection = new SqlConnection(@"Data Source=DESKTOP-V0DIBPT;Initial Catalog=courseWorkDB;User id=localhostserver;Password=localhost123;Integrated Security=True");
-            //this.connection = new SqlConnection(@"Data Source=DESKTOP-V0DIBPT;Initial Catalog=courseWorkDB;Integrated Security=True");
             await this.connection.OpenAsync();
         }
 

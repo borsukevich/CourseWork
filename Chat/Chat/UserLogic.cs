@@ -1,9 +1,10 @@
 ﻿using System;
+
 namespace Chat
 {
     class UserLogic
     {
-        public UserLogic(String login,String password,String name,String surname,DateTime birthday,String salt,DateTime registry,String picturePath = default(String))
+        public UserLogic(String login,String password,String name,String surname,String birthday,String salt,String registry,String picturePath = default(String))
         {
             this.Login = login;
             this.Password = password;
@@ -19,9 +20,9 @@ namespace Chat
         public String Password { get; set; }
         public String Name { get; set; }
         public String Surname { get; set; }
-        public DateTime Birthday { get; set; }
+        public String Birthday { get; set; }
         public String Salt { get; set; }
-        public DateTime Registry { get; set; }
+        public String Registry { get; set; }
         public String PicturePath { get; set; }
     }
 }
