@@ -19,9 +19,9 @@ namespace Chat
             this.connectStr = new MySqlConnectionStringBuilder()
             {
                 Server = "sql11.freesqldatabase.com",
-                UserID = "sql11203716",
-                Password = "wkTIqh2Sm7",
-                Database = "sql11203716"
+                UserID = "sql11206175",
+                Password = "2jLNEpmQd5",
+                Database = "sql11206175"
             };
             this.connection = new MySqlConnection(this.connectStr.ToString());
         }
