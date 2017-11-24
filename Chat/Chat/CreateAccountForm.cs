@@ -25,7 +25,7 @@ namespace Chat
             };
             this.connection = new MySqlConnection(this.connectStr.ToString());
         }
-
+        
         public static String MD5Hash(String text)
         {
             System.Text.StringBuilder hash = new System.Text.StringBuilder();
