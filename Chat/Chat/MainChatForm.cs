@@ -11,6 +11,7 @@ namespace Chat
         private MySqlConnectionStringBuilder connectStr;
         private MySqlConnection connection;
         private String baseInfo;
+
         public MainChatForm()
         {
             InitializeComponent();
@@ -19,7 +20,7 @@ namespace Chat
         public MainChatForm(UserLogic user)
         {
             InitializeComponent();
-        
+
             this.connectStr = new MySqlConnectionStringBuilder()
             {
                 Server = "sql11.freesqldatabase.com",
@@ -62,7 +63,6 @@ namespace Chat
             return result;
         }
 
-
         private void sendMessagePictureBox_MouseEnter(object sender, EventArgs e)
         {
             this.sendMessagePictureBox.Cursor = Cursors.Hand;
@@ -85,8 +85,6 @@ namespace Chat
                 command.CommandText = $"INSERT INTO Message(message) VALUES('{message}')";
                 await command.ExecuteNonQueryAsync();
                 this.messageTextBox.Text = System.String.Empty;
-                this.showMessageTextBox.SelectionStart = this.showMessageTextBox.Text.Length;
-                
             }
         }
 
@@ -126,5 +124,10 @@ namespace Chat
             this.showMessageTextBox.Update();
             System.Threading.Thread.Sleep(100);
         }
-   }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+           this.MainChatForm_Activated(sender, e);
+        }
+    }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainChatForm));
             this.showMessageTextBox = new MetroFramework.Controls.MetroTextBox();
             this.userName = new MetroFramework.Controls.MetroLabel();
@@ -35,6 +36,7 @@
             this.sendMessagePictureBox = new System.Windows.Forms.PictureBox();
             this.userInfoPictureBox = new System.Windows.Forms.PictureBox();
             this.userSurname = new MetroFramework.Controls.MetroLabel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.sendMessagePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userInfoPictureBox)).BeginInit();
             this.SuspendLayout();
@@ -136,6 +138,12 @@
             this.userSurname.Name = "userSurname";
             this.userSurname.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 2000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // MainChatForm
             // 
             resources.ApplyResources(this, "$this");
@@ -171,5 +179,6 @@
         private System.Windows.Forms.PictureBox userInfoPictureBox;
         private System.Windows.Forms.PictureBox sendMessagePictureBox;
         private MetroFramework.Controls.MetroLabel userSurname;
+        private System.Windows.Forms.Timer timer1;
     }
 }
