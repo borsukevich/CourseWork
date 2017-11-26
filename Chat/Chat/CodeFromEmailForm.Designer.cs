@@ -87,6 +87,7 @@
             this.Text = "Code";
             this.TextAlign = MetroFramework.Forms.MetroFormTextAlign.Center;
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CodeFromEmailForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

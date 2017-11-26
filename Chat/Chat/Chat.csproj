@@ -87,7 +87,6 @@
     <Compile Include="CodeFromEmailForm.Designer.cs">
       <DependentUpon>CodeFromEmailForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MessageInfo.cs" />
     <Compile Include="SignInForm.cs">
       <SubType>Form</SubType>
     </Compile>

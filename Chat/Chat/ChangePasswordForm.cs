@@ -82,6 +82,7 @@ namespace Chat
             if (this.connection != null && this.connection.State != System.Data.ConnectionState.Closed)
             {
                 this.connection.Close();
+                System.Windows.Forms.Application.Exit();
             }
         }
     }

@@ -44,6 +44,7 @@ namespace Chat
                 System.Data.Common.DbDataReader dataReader = null;
                 dataReader = command.ExecuteReaderAsync().Result;
                 UserLogic user = null;
+
                 try
                 {
                     while (await dataReader.ReadAsync())
@@ -96,6 +97,7 @@ namespace Chat
             if (this.connection != null && this.connection.State != System.Data.ConnectionState.Closed)
             {
                 this.connection.Close();
+                System.Windows.Forms.Application.Exit();
             }
         }
     }

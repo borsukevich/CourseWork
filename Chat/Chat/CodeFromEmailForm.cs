@@ -33,5 +33,10 @@ namespace Chat
                 System.Windows.Forms.MessageBox.Show("Wrong code", "Error!", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
             }
         }
+
+        private void CodeFromEmailForm_FormClosing(object sender, System.Windows.Forms.FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
     }
 }
