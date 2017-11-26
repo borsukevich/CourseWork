@@ -87,6 +87,12 @@
     <Compile Include="CodeFromEmailForm.Designer.cs">
       <DependentUpon>CodeFromEmailForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PersonalInformationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonalInformationForm.Designer.cs">
+      <DependentUpon>PersonalInformationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SignInForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainChatForm.resx">
       <DependentUpon>MainChatForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonalInformationForm.resx">
+      <DependentUpon>PersonalInformationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SignInForm.resx">
       <DependentUpon>SignInForm.cs</DependentUpon>

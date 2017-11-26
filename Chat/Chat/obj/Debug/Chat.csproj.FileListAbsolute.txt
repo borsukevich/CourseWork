@@ -33,3 +33,4 @@ D:\gitRepository\NewCourseWork\Chat\Chat\obj\Debug\Chat.pdb
 D:\gitRepository\NewCourseWork\Chat\Chat\obj\Debug\Chat.ChangePasswordForm.resources
 D:\gitRepository\NewCourseWork\Chat\Chat\bin\Debug\MySql.Data.dll
 D:\gitRepository\NewCourseWork\Chat\Chat\bin\Debug\MySql.Data.xml
+D:\gitRepository\NewCourseWork\Chat\Chat\obj\Debug\Chat.PersonalInformationForm.resources

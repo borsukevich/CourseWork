@@ -71,8 +71,8 @@ namespace Chat
 
         private void userInfoPictureBox_Click(object sender, EventArgs e)
         {
-            System.String info = System.String.Format("Name: {0} {1}Surname: {2} {1}Birthday: {3} {1}E-mail: {4}{1}Registry: {5}{1}", this.user.Name, System.Environment.NewLine, this.user.Surname, this.user.Birthday, this.user.Login, this.user.Registry.Replace('T', ' '));
-            MessageBox.Show(info, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            PersonalInformationForm pif = new PersonalInformationForm(user);
+            pif.ShowDialog();
         }
 
         private async void sendMessagePictureBox_Click(object sender, EventArgs e)
