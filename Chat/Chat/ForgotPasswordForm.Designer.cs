@@ -32,7 +32,7 @@
             this.BackButton = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.EmailBox = new System.Windows.Forms.TextBox();
-            this.SendCodeButton = new System.Windows.Forms.Button();
+            this.SendCodeButton = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.BackButton)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,14 +70,19 @@
             // 
             // SendCodeButton
             // 
-            this.SendCodeButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SendCodeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SendCodeButton.Location = new System.Drawing.Point(85, 155);
+            this.SendCodeButton.FontSize = MetroFramework.MetroButtonSize.Tall;
+            this.SendCodeButton.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.SendCodeButton.Highlight = true;
+            this.SendCodeButton.Location = new System.Drawing.Point(89, 155);
             this.SendCodeButton.Name = "SendCodeButton";
             this.SendCodeButton.Size = new System.Drawing.Size(135, 34);
-            this.SendCodeButton.TabIndex = 7;
-            this.SendCodeButton.Text = "Send code";
-            this.SendCodeButton.UseVisualStyleBackColor = true;
+            this.SendCodeButton.Style = MetroFramework.MetroColorStyle.Green;
+            this.SendCodeButton.TabIndex = 8;
+            this.SendCodeButton.Text = "Send";
+            this.SendCodeButton.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.SendCodeButton.UseCustomBackColor = true;
+            this.SendCodeButton.UseSelectable = true;
+            this.SendCodeButton.UseStyleColors = true;
             this.SendCodeButton.Click += new System.EventHandler(this.SendCodeButton_Click);
             // 
             // ForgotPasswordForm
@@ -111,6 +116,6 @@
         private System.Windows.Forms.PictureBox BackButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox EmailBox;
-        private System.Windows.Forms.Button SendCodeButton;
+        private MetroFramework.Controls.MetroButton SendCodeButton;
     }
 }

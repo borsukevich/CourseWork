@@ -507,13 +507,16 @@
             this.CreateAccountButton.FontSize = MetroFramework.MetroButtonSize.Tall;
             this.CreateAccountButton.FontWeight = MetroFramework.MetroButtonWeight.Regular;
             this.CreateAccountButton.Highlight = true;
-            this.CreateAccountButton.Location = new System.Drawing.Point(24, 551);
-            this.CreateAccountButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.CreateAccountButton.Location = new System.Drawing.Point(23, 550);
             this.CreateAccountButton.Name = "CreateAccountButton";
             this.CreateAccountButton.Size = new System.Drawing.Size(351, 37);
-            this.CreateAccountButton.TabIndex = 41;
+            this.CreateAccountButton.Style = MetroFramework.MetroColorStyle.Green;
+            this.CreateAccountButton.TabIndex = 42;
             this.CreateAccountButton.Text = "Create";
+            this.CreateAccountButton.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.CreateAccountButton.UseCustomBackColor = true;
             this.CreateAccountButton.UseSelectable = true;
+            this.CreateAccountButton.UseStyleColors = true;
             this.CreateAccountButton.Click += new System.EventHandler(this.CreateAccountButton_Click);
             // 
             // CreateAccountForm

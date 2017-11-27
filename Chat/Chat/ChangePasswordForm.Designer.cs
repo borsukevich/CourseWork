@@ -29,25 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChangePasswordForm));
-            this.changeButton = new System.Windows.Forms.Button();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.repeatTextBox = new System.Windows.Forms.TextBox();
             this.passwordLabel = new System.Windows.Forms.Label();
+            this.changeButton = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
-            // 
-            // changeButton
-            // 
-            this.changeButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.changeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.changeButton.Location = new System.Drawing.Point(135, 252);
-            this.changeButton.Margin = new System.Windows.Forms.Padding(4);
-            this.changeButton.Name = "changeButton";
-            this.changeButton.Size = new System.Drawing.Size(180, 42);
-            this.changeButton.TabIndex = 1;
-            this.changeButton.Text = "Change";
-            this.changeButton.UseVisualStyleBackColor = true;
-            this.changeButton.Click += new System.EventHandler(this.changeButton_Click);
             // 
             // passwordTextBox
             // 
@@ -97,14 +84,31 @@
             this.passwordLabel.TabIndex = 12;
             this.passwordLabel.Text = "Password:";
             // 
+            // changeButton
+            // 
+            this.changeButton.FontSize = MetroFramework.MetroButtonSize.Tall;
+            this.changeButton.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.changeButton.Highlight = true;
+            this.changeButton.Location = new System.Drawing.Point(130, 249);
+            this.changeButton.Name = "changeButton";
+            this.changeButton.Size = new System.Drawing.Size(180, 42);
+            this.changeButton.Style = MetroFramework.MetroColorStyle.Green;
+            this.changeButton.TabIndex = 13;
+            this.changeButton.Text = "Change";
+            this.changeButton.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.changeButton.UseCustomBackColor = true;
+            this.changeButton.UseSelectable = true;
+            this.changeButton.UseStyleColors = true;
+            this.changeButton.Click += new System.EventHandler(this.changeButton_Click);
+            // 
             // ChangePasswordForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(433, 350);
+            this.Controls.Add(this.changeButton);
             this.Controls.Add(this.repeatTextBox);
             this.Controls.Add(this.passwordLabel);
-            this.Controls.Add(this.changeButton);
             this.Controls.Add(this.passwordTextBox);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -124,11 +128,10 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button changeButton;
         private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox repeatTextBox;
         private System.Windows.Forms.Label passwordLabel;
+        private MetroFramework.Controls.MetroButton changeButton;
     }
 }

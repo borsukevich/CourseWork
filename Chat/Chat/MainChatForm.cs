@@ -20,13 +20,12 @@ namespace Chat
         public MainChatForm(UserLogic user)
         {
             InitializeComponent();
-
             this.connectStr = new MySqlConnectionStringBuilder()
             {
                 Server = "sql11.freesqldatabase.com",
-                UserID = "sql11206175",
-                Password = "2jLNEpmQd5",
-                Database = "sql11206175"
+                UserID = "sql11207497",
+                Password = "2HiZXJPPNj",
+                Database = "sql11207497"
             };
             this.connection = new MySqlConnection(this.connectStr.ToString());
             this.user = user;

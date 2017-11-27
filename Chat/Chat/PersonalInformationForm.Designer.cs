@@ -39,6 +39,7 @@
             this.metroTextBox3 = new MetroFramework.Controls.MetroTextBox();
             this.metroTextBox4 = new MetroFramework.Controls.MetroTextBox();
             this.metroTextBox5 = new MetroFramework.Controls.MetroTextBox();
+            this.deleteButton = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
             // metroLabel1
@@ -266,11 +267,31 @@
             this.metroTextBox5.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.metroTextBox5.Enter += new System.EventHandler(this.metroTextBox1_Enter);
             // 
+            // deleteButton
+            // 
+            this.deleteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.deleteButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.deleteButton.FontSize = MetroFramework.MetroButtonSize.Tall;
+            this.deleteButton.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.deleteButton.Highlight = true;
+            this.deleteButton.Location = new System.Drawing.Point(122, 318);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(136, 36);
+            this.deleteButton.Style = MetroFramework.MetroColorStyle.Red;
+            this.deleteButton.TabIndex = 1;
+            this.deleteButton.Text = "Delete";
+            this.deleteButton.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.deleteButton.UseCustomBackColor = true;
+            this.deleteButton.UseSelectable = true;
+            this.deleteButton.UseStyleColors = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
+            // 
             // PersonalInformationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(378, 317);
+            this.ClientSize = new System.Drawing.Size(378, 377);
+            this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.metroTextBox5);
             this.Controls.Add(this.metroTextBox4);
             this.Controls.Add(this.metroTextBox3);
@@ -290,6 +311,8 @@
             this.Text = "Personal information";
             this.TextAlign = MetroFramework.Forms.MetroFormTextAlign.Center;
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PersonalInformationForm_FormClosing);
+            this.Load += new System.EventHandler(this.PersonalInformationForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -307,5 +330,6 @@
         private MetroFramework.Controls.MetroTextBox metroTextBox3;
         private MetroFramework.Controls.MetroTextBox metroTextBox4;
         private MetroFramework.Controls.MetroTextBox metroTextBox5;
+        private MetroFramework.Controls.MetroButton deleteButton;
     }
 }

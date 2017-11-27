@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CodeFromEmailForm));
             this.label1 = new System.Windows.Forms.Label();
             this.EmailBox = new System.Windows.Forms.TextBox();
-            this.SubmitCodeButton = new System.Windows.Forms.Button();
+            this.SubmitCodeButton = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
             // label1
@@ -57,15 +57,19 @@
             // 
             // SubmitCodeButton
             // 
-            this.SubmitCodeButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SubmitCodeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SubmitCodeButton.Location = new System.Drawing.Point(113, 191);
-            this.SubmitCodeButton.Margin = new System.Windows.Forms.Padding(4);
+            this.SubmitCodeButton.FontSize = MetroFramework.MetroButtonSize.Tall;
+            this.SubmitCodeButton.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.SubmitCodeButton.Highlight = true;
+            this.SubmitCodeButton.Location = new System.Drawing.Point(119, 195);
             this.SubmitCodeButton.Name = "SubmitCodeButton";
             this.SubmitCodeButton.Size = new System.Drawing.Size(180, 42);
-            this.SubmitCodeButton.TabIndex = 8;
+            this.SubmitCodeButton.Style = MetroFramework.MetroColorStyle.Green;
+            this.SubmitCodeButton.TabIndex = 43;
             this.SubmitCodeButton.Text = "Submit";
-            this.SubmitCodeButton.UseVisualStyleBackColor = true;
+            this.SubmitCodeButton.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.SubmitCodeButton.UseCustomBackColor = true;
+            this.SubmitCodeButton.UseSelectable = true;
+            this.SubmitCodeButton.UseStyleColors = true;
             this.SubmitCodeButton.Click += new System.EventHandler(this.SubmitCodeButton_Click);
             // 
             // CodeFromEmailForm
@@ -97,6 +101,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox EmailBox;
-        private System.Windows.Forms.Button SubmitCodeButton;
+        private MetroFramework.Controls.MetroButton SubmitCodeButton;
     }
 }

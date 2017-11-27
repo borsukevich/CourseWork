@@ -33,9 +33,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.LoginBox = new System.Windows.Forms.TextBox();
             this.PasswordBox = new System.Windows.Forms.TextBox();
-            this.SignInButton = new System.Windows.Forms.Button();
             this.CreateAccountLabel = new System.Windows.Forms.Label();
             this.ForgotPasswordLabel = new System.Windows.Forms.Label();
+            this.SignInButton = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
             // label1
@@ -81,19 +81,6 @@
             this.PasswordBox.Size = new System.Drawing.Size(181, 26);
             this.PasswordBox.TabIndex = 3;
             // 
-            // SignInButton
-            // 
-            this.SignInButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SignInButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SignInButton.Location = new System.Drawing.Point(111, 299);
-            this.SignInButton.Margin = new System.Windows.Forms.Padding(4);
-            this.SignInButton.Name = "SignInButton";
-            this.SignInButton.Size = new System.Drawing.Size(180, 42);
-            this.SignInButton.TabIndex = 6;
-            this.SignInButton.Text = "Sign in";
-            this.SignInButton.UseVisualStyleBackColor = true;
-            this.SignInButton.Click += new System.EventHandler(this.SignInButton_Click);
-            // 
             // CreateAccountLabel
             // 
             this.CreateAccountLabel.AutoSize = true;
@@ -121,6 +108,23 @@
             this.ForgotPasswordLabel.TabIndex = 4;
             this.ForgotPasswordLabel.Text = "Forgot password?";
             this.ForgotPasswordLabel.Click += new System.EventHandler(this.ForgotPasswordLabel_Click);
+            // 
+            // SignInButton
+            // 
+            this.SignInButton.FontSize = MetroFramework.MetroButtonSize.Tall;
+            this.SignInButton.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.SignInButton.Highlight = true;
+            this.SignInButton.Location = new System.Drawing.Point(111, 299);
+            this.SignInButton.Name = "SignInButton";
+            this.SignInButton.Size = new System.Drawing.Size(180, 42);
+            this.SignInButton.Style = MetroFramework.MetroColorStyle.Green;
+            this.SignInButton.TabIndex = 7;
+            this.SignInButton.Text = "Sign in";
+            this.SignInButton.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.SignInButton.UseCustomBackColor = true;
+            this.SignInButton.UseSelectable = true;
+            this.SignInButton.UseStyleColors = true;
+            this.SignInButton.Click += new System.EventHandler(this.SignInButton_Click);
             // 
             // SignInForm
             // 
@@ -160,9 +164,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox LoginBox;
         private System.Windows.Forms.TextBox PasswordBox;
-        private System.Windows.Forms.Button SignInButton;
         private System.Windows.Forms.Label CreateAccountLabel;
         private System.Windows.Forms.Label ForgotPasswordLabel;
+        private MetroFramework.Controls.MetroButton SignInButton;
     }
 }
 
