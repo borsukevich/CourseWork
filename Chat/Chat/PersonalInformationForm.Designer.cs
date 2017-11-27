@@ -269,16 +269,14 @@
             // 
             // deleteButton
             // 
-            this.deleteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.deleteButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.deleteButton.FontSize = MetroFramework.MetroButtonSize.Tall;
             this.deleteButton.FontWeight = MetroFramework.MetroButtonWeight.Regular;
             this.deleteButton.Highlight = true;
-            this.deleteButton.Location = new System.Drawing.Point(122, 318);
+            this.deleteButton.Location = new System.Drawing.Point(113, 318);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(136, 36);
             this.deleteButton.Style = MetroFramework.MetroColorStyle.Red;
-            this.deleteButton.TabIndex = 1;
+            this.deleteButton.TabIndex = 10;
             this.deleteButton.Text = "Delete";
             this.deleteButton.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.deleteButton.UseCustomBackColor = true;
