@@ -100,6 +100,5 @@ namespace Chat
                 System.Windows.Forms.Application.Exit();
             }
         }
-
     }
 }

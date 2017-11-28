@@ -8,9 +8,10 @@ namespace Chat
         private MySqlConnectionStringBuilder connectStr;
         private MySqlConnection connection;
         public static System.Boolean isDeletedProfile;
+
         public PersonalInformationForm()
         {
-            InitializeComponent();            
+            InitializeComponent();
         }
 
         public PersonalInformationForm(UserLogic user)

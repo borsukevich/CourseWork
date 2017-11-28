@@ -121,6 +121,9 @@
   <data name="resource.Image" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
+  <data name="resource.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="resource.Location" type="System.Drawing.Point, System.Drawing">
     <value>180, 2</value>
@@ -154,7 +157,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;showMessageTextBox.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="userName.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -181,10 +184,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;userName.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="resource.Image1" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
+  </data>
+  <data name="resource.ImeMode1" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="resource.Location1" type="System.Drawing.Point, System.Drawing">
     <value>370, 2</value>
@@ -217,7 +223,70 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;messageTextBox.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
+  </data>
+  <data name="userSurname.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="userSurname.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 59</value>
+  </data>
+  <data name="userSurname.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 25</value>
+  </data>
+  <data name="userSurname.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="userSurname.Text" xml:space="preserve">
+    <value>SURNAME</value>
+  </data>
+  <data name="&gt;&gt;userSurname.Name" xml:space="preserve">
+    <value>userSurname</value>
+  </data>
+  <data name="&gt;&gt;userSurname.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;userSurname.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;userSurname.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <metadata name="timer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="logoutPictureBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="logoutPictureBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>472, 40</value>
+  </data>
+  <data name="logoutPictureBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="logoutPictureBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 44</value>
+  </data>
+  <data name="logoutPictureBox.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="logoutPictureBox.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="&gt;&gt;logoutPictureBox.Name" xml:space="preserve">
+    <value>logoutPictureBox</value>
+  </data>
+  <data name="&gt;&gt;logoutPictureBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;logoutPictureBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;logoutPictureBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="sendMessagePictureBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="sendMessagePictureBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>457, 458</value>
@@ -241,7 +310,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;sendMessagePictureBox.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
+  </data>
+  <data name="userInfoPictureBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="userInfoPictureBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>21, 26</value>
@@ -265,38 +337,8 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;userInfoPictureBox.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
-  <data name="userSurname.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="userSurname.Location" type="System.Drawing.Point, System.Drawing">
-    <value>143, 59</value>
-  </data>
-  <data name="userSurname.Size" type="System.Drawing.Size, System.Drawing">
-    <value>105, 25</value>
-  </data>
-  <data name="userSurname.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="userSurname.Text" xml:space="preserve">
-    <value>SURNAME</value>
-  </data>
-  <data name="&gt;&gt;userSurname.Name" xml:space="preserve">
-    <value>userSurname</value>
-  </data>
-  <data name="&gt;&gt;userSurname.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;userSurname.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;userSurname.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <metadata name="timer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -6477,6 +6519,9 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
 </value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>

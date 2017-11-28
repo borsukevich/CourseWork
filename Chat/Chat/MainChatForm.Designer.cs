@@ -33,10 +33,12 @@
             this.showMessageTextBox = new MetroFramework.Controls.MetroTextBox();
             this.userName = new MetroFramework.Controls.MetroLabel();
             this.messageTextBox = new MetroFramework.Controls.MetroTextBox();
-            this.sendMessagePictureBox = new System.Windows.Forms.PictureBox();
-            this.userInfoPictureBox = new System.Windows.Forms.PictureBox();
             this.userSurname = new MetroFramework.Controls.MetroLabel();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.logoutPictureBox = new System.Windows.Forms.PictureBox();
+            this.sendMessagePictureBox = new System.Windows.Forms.PictureBox();
+            this.userInfoPictureBox = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.logoutPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sendMessagePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userInfoPictureBox)).BeginInit();
             this.SuspendLayout();
@@ -47,6 +49,7 @@
             // 
             // 
             this.showMessageTextBox.CustomButton.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.showMessageTextBox.CustomButton.ImeMode = ((System.Windows.Forms.ImeMode)(resources.GetObject("resource.ImeMode")));
             this.showMessageTextBox.CustomButton.Location = ((System.Drawing.Point)(resources.GetObject("resource.Location")));
             this.showMessageTextBox.CustomButton.Name = "";
             this.showMessageTextBox.CustomButton.Size = ((System.Drawing.Size)(resources.GetObject("resource.Size")));
@@ -86,6 +89,7 @@
             // 
             // 
             this.messageTextBox.CustomButton.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.messageTextBox.CustomButton.ImeMode = ((System.Windows.Forms.ImeMode)(resources.GetObject("resource.ImeMode1")));
             this.messageTextBox.CustomButton.Location = ((System.Drawing.Point)(resources.GetObject("resource.Location1")));
             this.messageTextBox.CustomButton.Name = "";
             this.messageTextBox.CustomButton.Size = ((System.Drawing.Size)(resources.GetObject("resource.Size1")));
@@ -112,6 +116,29 @@
             this.messageTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.messageTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.messageTextBox_KeyPress);
             // 
+            // userSurname
+            // 
+            resources.ApplyResources(this.userSurname, "userSurname");
+            this.userSurname.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.userSurname.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.userSurname.Name = "userSurname";
+            this.userSurname.Theme = MetroFramework.MetroThemeStyle.Dark;
+            // 
+            // timer
+            // 
+            this.timer.Enabled = true;
+            this.timer.Interval = 2000;
+            this.timer.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // logoutPictureBox
+            // 
+            this.logoutPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.logoutPictureBox.Image = global::Chat.Properties.Resources.logout;
+            resources.ApplyResources(this.logoutPictureBox, "logoutPictureBox");
+            this.logoutPictureBox.Name = "logoutPictureBox";
+            this.logoutPictureBox.TabStop = false;
+            this.logoutPictureBox.Click += new System.EventHandler(this.logoutPictureBox_Click);
+            // 
             // sendMessagePictureBox
             // 
             this.sendMessagePictureBox.Image = global::Chat.Properties.Resources.sendMessage;
@@ -131,24 +158,11 @@
             this.userInfoPictureBox.Click += new System.EventHandler(this.userInfoPictureBox_Click);
             this.userInfoPictureBox.MouseEnter += new System.EventHandler(this.userInfoPictureBox_MouseEnter);
             // 
-            // userSurname
-            // 
-            resources.ApplyResources(this.userSurname, "userSurname");
-            this.userSurname.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.userSurname.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.userSurname.Name = "userSurname";
-            this.userSurname.Theme = MetroFramework.MetroThemeStyle.Dark;
-            // 
-            // timer
-            // 
-            this.timer.Enabled = true;
-            this.timer.Interval = 2000;
-            this.timer.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // MainChatForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.logoutPictureBox);
             this.Controls.Add(this.sendMessagePictureBox);
             this.Controls.Add(this.userInfoPictureBox);
             this.Controls.Add(this.showMessageTextBox);
@@ -165,6 +179,7 @@
             this.Activated += new System.EventHandler(this.MainChatForm_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainChatForm_FormClosing);
             this.Load += new System.EventHandler(this.MainChatForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.logoutPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sendMessagePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userInfoPictureBox)).EndInit();
             this.ResumeLayout(false);
@@ -181,5 +196,6 @@
         private System.Windows.Forms.PictureBox sendMessagePictureBox;
         private MetroFramework.Controls.MetroLabel userSurname;
         private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.PictureBox logoutPictureBox;
     }
 }

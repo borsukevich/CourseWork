@@ -147,5 +147,11 @@ namespace Chat
                 this.sendMessagePictureBox_Click(sender, e);
             }
         }
+
+        private void logoutPictureBox_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new SignInForm().Show();
+        }
     }
 }

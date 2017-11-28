@@ -47,9 +47,11 @@ namespace Chat
             MailAddress to = new MailAddress(login ?? String.Empty);
             MailMessage message = new MailMessage(from, to)
             {
-                Subject = "Forgot password ?",
-                Body = "Here is your code that you should use to create new password: " + Environment.NewLine + "Code: " + password
+                Subject = "Code to reset password",
+                Body = "Here is your code that you should use to create new password:<br>Code: <b>" + password + "</b>"
             };
+            message.IsBodyHtml = true;
+
             SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587)
             {
                 Credentials = new NetworkCredential("SendMailToUserTest@gmail.com", "sendingMessageToUSER123"),

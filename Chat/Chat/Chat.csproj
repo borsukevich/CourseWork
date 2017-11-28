@@ -165,6 +165,7 @@
     <Content Include="Resources\agree.png" />
     <Content Include="Resources\disagree.png" />
     <Content Include="Resources\loadPicture2.ico" />
+    <None Include="Resources\logout.png" />
     <Content Include="Resources\sendMessage.png" />
     <None Include="Resources\userInfo.png" />
   </ItemGroup>
