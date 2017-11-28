@@ -71,7 +71,7 @@ namespace Chat
         private void userInfoPictureBox_Click(object sender, EventArgs e)
         {
             PersonalInformationForm pif = new PersonalInformationForm(user);
-            pif.ShowDialog();
+            pif.ShowDialog();   
         }
 
         private async void sendMessagePictureBox_Click(object sender, EventArgs e)
@@ -81,9 +81,13 @@ namespace Chat
                 String message = this.user.Name + " -> " + this.messageTextBox.Text + Environment.NewLine;
                 this.showMessageTextBox.Text += message;
                 MySqlCommand command = this.connection.CreateCommand();
+
                 command.CommandText = $"INSERT INTO Message(message) VALUES('{message}')";
+                
                 await command.ExecuteNonQueryAsync();
                 this.messageTextBox.Text = System.String.Empty;
+                this.messageTextBox.Enabled = false;
+                this.messageTextBox.Enabled = true;
             }
         }
 
@@ -118,15 +122,30 @@ namespace Chat
 
         private async void MainChatForm_Activated(object sender, EventArgs e)
         {
-            this.baseInfo = await this.ReadFromDataBaseAsync();
-            this.showMessageTextBox.Text = this.baseInfo;
-            this.showMessageTextBox.Update();
-            System.Threading.Thread.Sleep(100);
+            if(!PersonalInformationForm.isDeletedProfile)
+            {
+                this.baseInfo = await this.ReadFromDataBaseAsync();
+                this.showMessageTextBox.Text = this.baseInfo;
+                this.showMessageTextBox.Update();
+                System.Threading.Thread.Sleep(100);
+            }
+            else
+            {
+                this.MainChatForm_FormClosing(sender, new FormClosingEventArgs(CloseReason.ApplicationExitCall,false));
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
            this.MainChatForm_Activated(sender, e);
+        }
+
+        private void messageTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (System.Char)Keys.Enter)
+            {
+                this.sendMessagePictureBox_Click(sender, e);
+            }
         }
     }
 }

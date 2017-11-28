@@ -272,7 +272,7 @@
             this.deleteButton.FontSize = MetroFramework.MetroButtonSize.Tall;
             this.deleteButton.FontWeight = MetroFramework.MetroButtonWeight.Regular;
             this.deleteButton.Highlight = true;
-            this.deleteButton.Location = new System.Drawing.Point(113, 318);
+            this.deleteButton.Location = new System.Drawing.Point(122, 309);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(136, 36);
             this.deleteButton.Style = MetroFramework.MetroColorStyle.Red;

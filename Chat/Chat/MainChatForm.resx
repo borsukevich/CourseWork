@@ -205,7 +205,7 @@
     <value>418, 50</value>
   </data>
   <data name="messageTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;messageTextBox.Name" xml:space="preserve">
     <value>messageTextBox</value>
